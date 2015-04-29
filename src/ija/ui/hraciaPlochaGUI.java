@@ -24,6 +24,7 @@ import javax.swing.*;
 public class hraciaPlochaGUI extends JPanel
 {
     JPanel polickaGui[][];
+    JPanel pokladyGui[][];
     MazeBoard hraciaPlocha;
     
     public hraciaPlochaGUI()
@@ -31,6 +32,7 @@ public class hraciaPlochaGUI extends JPanel
         this.hraciaPlocha = null;
         setLayout(null);
         this.polickaGui = new JPanel[12][12];
+        this.pokladyGui = new JPanel[12][12];
         //vytvorGui();
     }
     
@@ -85,7 +87,8 @@ public class hraciaPlochaGUI extends JPanel
                 }
                 String meno = Integer.toString(menoU) + Integer.toString(menoR) + Integer.toString(menoD) + Integer.toString(menoL);
                 System.out.println(meno);
-                this.polickaGui[i][j] = new JPanel(); 
+                this.polickaGui[i][j] = new JPanel();
+                this.pokladyGui[i][j] = new JPanel();
                 try {
                     BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/" + meno +".png"));
                     Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
@@ -93,6 +96,16 @@ public class hraciaPlochaGUI extends JPanel
                 } catch (IOException ex) {
                     Logger.getLogger(hraciaPlochaGUI.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                try {
+                    BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/karta.png"));
+                    Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
+                    this.pokladyGui[i][j].add(new JLabel(new ImageIcon(dimg)));
+                } catch (IOException ex) {
+                    Logger.getLogger(hraciaPlochaGUI.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                setOpaque(false);
+                this.polickaGui[i][j].setOpaque(false);
+                this.pokladyGui[i][j].setOpaque(false);
                 add(this.polickaGui[i][j]);
                 //add(new JButton());5
             }
