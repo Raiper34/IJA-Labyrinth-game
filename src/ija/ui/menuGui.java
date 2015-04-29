@@ -378,7 +378,6 @@ public class menuGui extends javax.swing.JFrame {
         }
         hraciaPlochaGUI1.removeAll();
         MazeBoard hraciaPlocha = MazeBoard.createMazeBoard(velkostPolaSlider.getValue());
-        hraciaPlocha.newGame();
         ALL.hraciePole = hraciaPlocha;
         hraciaPlochaGUI1.vytvorGui();
         hraci zoznamHracov = hraci.vytvorHracov(pocetHracovSlider.getValue(),velkostPolaSlider.getValue(),velkostPolaSlider.getValue());
@@ -402,18 +401,25 @@ public class menuGui extends javax.swing.JFrame {
     }//GEN-LAST:event_UkoncitHruActionPerformed
 
     private void dalsiHracActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dalsiHracActionPerformed
-        int hracTeraz = Integer.parseInt(tah.getText());
-        hracTeraz = hracTeraz + 1;
+        ALL.hracNaTahu = ALL.hracNaTahu + 1;
         
-        if(pocetHracovSlider.getValue() >= hracTeraz)
+        if(pocetHracovSlider.getValue() >= ALL.hracNaTahu)
         {
-           tah.setText(Integer.toString(hracTeraz));
+           tah.setText(Integer.toString(ALL.hracNaTahu));
         }
         else
         {
-           hracTeraz = 1;
-           tah.setText(Integer.toString(hracTeraz));
+           ALL.hracNaTahu = 1;
+           tah.setText(Integer.toString(ALL.hracNaTahu));
            
+        }
+        if(ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha == -1)
+        {
+            kartaHraca.setText("");
+        }
+        else
+        {
+            kartaHraca.setText(Integer.toString(ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha));
         }
         
         
@@ -424,7 +430,21 @@ public class menuGui extends javax.swing.JFrame {
     }//GEN-LAST:event_dalsiHracActionPerformed
 
     private void potiahnutKartuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potiahnutKartuActionPerformed
-        // TODO add your handling code here:
+        //if(ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha == -1)
+        //{
+        // ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha = ALL.balicekKariet.popCard().getCard().getCode();
+        //kartaHraca.setText(Integer.toString(ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha));
+        //}
+        if(ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha == -1)
+        {
+
+            if( ALL.balicekKariet.size() != 0) 
+            {
+                //kartaHraca.setText(Integer.toString(ALL.balicekKariet.popCard().getCard().getCode()));
+                ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha = ALL.balicekKariet.popCard().getCard().getCode();
+                kartaHraca.setText(Integer.toString(ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha));
+            }
+        }
     }//GEN-LAST:event_potiahnutKartuActionPerformed
 
     /**

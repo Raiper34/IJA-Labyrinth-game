@@ -17,4 +17,5 @@ public class ALL
     public static MazeBoard hraciePole;
     public static hraci poleHracov;
     public static CardPack balicekKariet;
+    public static int hracNaTahu = 1;
 }
