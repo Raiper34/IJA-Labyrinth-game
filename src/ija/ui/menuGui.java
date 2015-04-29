@@ -230,7 +230,6 @@ public class menuGui extends javax.swing.JFrame {
 
         kartaHraca.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         kartaHraca.setForeground(new java.awt.Color(240, 240, 240));
-        kartaHraca.setText("0");
         hraPanel.add(kartaHraca);
         kartaHraca.setBounds(820, 280, 40, 40);
 
