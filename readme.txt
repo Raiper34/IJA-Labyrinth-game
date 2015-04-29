@@ -1,0 +1,1 @@
+Tu zatial neni nic napisane :) a to je fajn :)
