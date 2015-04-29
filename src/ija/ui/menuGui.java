@@ -379,7 +379,7 @@ public class menuGui extends javax.swing.JFrame {
         hraciaPlochaGUI1.removeAll();
         MazeBoard hraciaPlocha = MazeBoard.createMazeBoard(velkostPolaSlider.getValue());
         ALL.hraciePole = hraciaPlocha;
-        hraciaPlochaGUI1.vytvorGui();
+        hraciaPlocha.newGame();
         hraci zoznamHracov = hraci.vytvorHracov(pocetHracovSlider.getValue(),velkostPolaSlider.getValue(),velkostPolaSlider.getValue());
         ALL.poleHracov = zoznamHracov;
         hraciaPlochaGUI1.vytvorGui();

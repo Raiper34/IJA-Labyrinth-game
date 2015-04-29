@@ -47,7 +47,12 @@ public class hraciaPlochaGUI extends JPanel
                 } catch (IOException ex) {
                     Logger.getLogger(hraciaPlochaGUI.class.getName()).log(Level.SEVERE, null, ex);
                 }*/
-                //int test = ALL.hraciePole.plocha[i][j].karta.down.ordinal();
+                int menoU = ALL.hraciePole.plocha[i][j].karta.up.ordinal();
+                int menoP = ALL.hraciePole.plocha[i][j].karta.right.ordinal();
+                int menoD = ALL.hraciePole.plocha[i][j].karta.down.ordinal();
+                int menoL = ALL.hraciePole.plocha[i][j].karta.left.ordinal();
+                String meno = Integer.toString(menoU) + Integer.toString(menoP) + Integer.toString(menoD) + Integer.toString(menoL);
+                System.out.println(meno);
                 this.polickaGui[i][j] = new JPanel(); 
                 try {
                     BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/cesta_tecko_dolava-doprava-dole.png"));
