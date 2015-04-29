@@ -56,7 +56,18 @@ public class menuGui extends javax.swing.JFrame {
         tlacitko24 = new javax.swing.JRadioButton();
         pozadieNastavenia = new javax.swing.JLabel();
         hraPanel = new javax.swing.JPanel();
+        pohybDole = new javax.swing.JButton();
+        pohybVpravo = new javax.swing.JButton();
+        pohybVlavo = new javax.swing.JButton();
+        pohybHore = new javax.swing.JButton();
         hraciaPlochaGUI1 = new ija.ui.hraciaPlochaGUI();
+        otocVpravo = new javax.swing.JButton();
+        otocVlavo = new javax.swing.JButton();
+        riadokText = new javax.swing.JLabel();
+        stlpecText = new javax.swing.JLabel();
+        stlpecZadanie = new javax.swing.JTextField();
+        riadokZadanie = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
         kartaHraca = new javax.swing.JLabel();
         balicekKarty = new javax.swing.JLabel();
         UkoncitHru = new javax.swing.JButton();
@@ -225,19 +236,91 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.setMinimumSize(new java.awt.Dimension(1024, 768));
         hraPanel.setPreferredSize(new java.awt.Dimension(1024, 768));
         hraPanel.setLayout(null);
+
+        pohybDole.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pohybDole.setPreferredSize(new java.awt.Dimension(60, 60));
+        pohybDole.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pohybDoleActionPerformed(evt);
+            }
+        });
+        hraPanel.add(pohybDole);
+        pohybDole.setBounds(770, 380, 60, 60);
+
+        pohybVpravo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pohybVpravo.setPreferredSize(new java.awt.Dimension(60, 60));
+        pohybVpravo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pohybVpravoActionPerformed(evt);
+            }
+        });
+        hraPanel.add(pohybVpravo);
+        pohybVpravo.setBounds(830, 320, 60, 60);
+
+        pohybVlavo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pohybVlavo.setPreferredSize(new java.awt.Dimension(60, 60));
+        hraPanel.add(pohybVlavo);
+        pohybVlavo.setBounds(710, 320, 60, 60);
+
+        pohybHore.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/up.png"))); // NOI18N
+        pohybHore.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pohybHore.setPreferredSize(new java.awt.Dimension(60, 60));
+        pohybHore.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pohybHoreActionPerformed(evt);
+            }
+        });
+        hraPanel.add(pohybHore);
+        pohybHore.setBounds(770, 260, 60, 60);
         hraPanel.add(hraciaPlochaGUI1);
         hraciaPlochaGUI1.setBounds(40, 30, 600, 600);
+        hraPanel.add(otocVpravo);
+        otocVpravo.setBounds(790, 690, 60, 50);
+
+        otocVlavo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                otocVlavoActionPerformed(evt);
+            }
+        });
+        hraPanel.add(otocVlavo);
+        otocVlavo.setBounds(690, 690, 60, 50);
+
+        riadokText.setFont(new java.awt.Font("Cooper Black", 1, 18)); // NOI18N
+        riadokText.setForeground(new java.awt.Color(255, 255, 255));
+        riadokText.setText("riadok");
+        hraPanel.add(riadokText);
+        riadokText.setBounds(860, 460, 70, 22);
+
+        stlpecText.setFont(new java.awt.Font("Cooper Black", 1, 18)); // NOI18N
+        stlpecText.setForeground(new java.awt.Color(255, 255, 255));
+        stlpecText.setText("stlpec");
+        hraPanel.add(stlpecText);
+        stlpecText.setBounds(870, 500, 80, 22);
+        hraPanel.add(stlpecZadanie);
+        stlpecZadanie.setBounds(940, 490, 59, 30);
+
+        riadokZadanie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                riadokZadanieActionPerformed(evt);
+            }
+        });
+        hraPanel.add(riadokZadanie);
+        riadokZadanie.setBounds(940, 450, 60, 30);
+
+        jButton3.setText("VLOZIT VOLNY KAMEN");
+        hraPanel.add(jButton3);
+        jButton3.setBounds(680, 470, 170, 50);
 
         kartaHraca.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         kartaHraca.setForeground(new java.awt.Color(240, 240, 240));
         hraPanel.add(kartaHraca);
-        kartaHraca.setBounds(820, 280, 80, 50);
+        kartaHraca.setBounds(960, 150, 80, 50);
 
         balicekKarty.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         balicekKarty.setForeground(new java.awt.Color(240, 240, 240));
         balicekKarty.setText("0");
         hraPanel.add(balicekKarty);
-        balicekKarty.setBounds(820, 190, 90, 40);
+        balicekKarty.setBounds(960, 110, 90, 40);
 
         UkoncitHru.setFont(new java.awt.Font("Century", 1, 12)); // NOI18N
         UkoncitHru.setText("UKONCIT HRU >> NAVRAT DO MENU");
@@ -262,7 +345,7 @@ public class menuGui extends javax.swing.JFrame {
             }
         });
         hraPanel.add(potiahnutKartu);
-        potiahnutKartu.setBounds(730, 340, 200, 30);
+        potiahnutKartu.setBounds(870, 210, 140, 40);
 
         dalsiHrac.setText("DALSI HRAC");
         dalsiHrac.addActionListener(new java.awt.event.ActionListener() {
@@ -274,58 +357,58 @@ public class menuGui extends javax.swing.JFrame {
         dalsiHrac.setBounds(900, 610, 110, 120);
 
         infoKarty.setBackground(new java.awt.Color(0, 0, 0));
-        infoKarty.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
+        infoKarty.setFont(new java.awt.Font("Cooper Black", 1, 18)); // NOI18N
         infoKarty.setForeground(new java.awt.Color(240, 240, 240));
         infoKarty.setText("POCET KARIET V BALICKU:");
         infoKarty.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         hraPanel.add(infoKarty);
-        infoKarty.setBounds(700, 160, 270, 26);
+        infoKarty.setBounds(660, 120, 290, 26);
 
         tah.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         tah.setForeground(new java.awt.Color(240, 240, 240));
         tah.setText("1");
         tah.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         hraPanel.add(tah);
-        tah.setBounds(210, 670, 20, 40);
+        tah.setBounds(230, 670, 20, 40);
 
-        naTahu.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        naTahu.setFont(new java.awt.Font("Cooper Black", 1, 18)); // NOI18N
         naTahu.setForeground(new java.awt.Color(240, 240, 240));
         naTahu.setText("na tahu je hrac: =>");
         naTahu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         hraPanel.add(naTahu);
-        naTahu.setBounds(30, 670, 180, 40);
+        naTahu.setBounds(30, 670, 200, 40);
 
-        PocetHracoShow.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        PocetHracoShow.setFont(new java.awt.Font("Cooper Black", 1, 18)); // NOI18N
         PocetHracoShow.setForeground(new java.awt.Color(240, 240, 240));
         PocetHracoShow.setText("...");
         PocetHracoShow.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         hraPanel.add(PocetHracoShow);
-        PocetHracoShow.setBounds(30, 710, 350, 40);
+        PocetHracoShow.setBounds(30, 710, 360, 40);
 
         skore.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         skore.setForeground(new java.awt.Color(240, 240, 240));
         skore.setText("0");
         hraPanel.add(skore);
-        skore.setBounds(820, 400, 40, 40);
+        skore.setBounds(380, 690, 40, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/example.JPG"))); // NOI18N
         hraPanel.add(jLabel1);
         jLabel1.setBounds(50, 40, 600, 600);
 
-        infoScore.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
+        infoScore.setFont(new java.awt.Font("Cooper Black", 1, 18)); // NOI18N
         infoScore.setForeground(new java.awt.Color(240, 240, 240));
         infoScore.setText("TVOJE SKORE JE :");
         infoScore.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 2, true));
         hraPanel.add(infoScore);
-        infoScore.setBounds(750, 380, 180, 20);
+        infoScore.setBounds(300, 660, 200, 20);
 
         infoKarta.setBackground(new java.awt.Color(0, 0, 0));
-        infoKarta.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
+        infoKarta.setFont(new java.awt.Font("Cooper Black", 1, 18)); // NOI18N
         infoKarta.setForeground(new java.awt.Color(240, 240, 240));
         infoKarta.setText("TVOJA KARTA JE:");
         infoKarta.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         hraPanel.add(infoKarta);
-        infoKarta.setBounds(740, 250, 180, 26);
+        infoKarta.setBounds(750, 170, 200, 26);
 
         pozadieHry.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/black3.jpg"))); // NOI18N
         hraPanel.add(pozadieHry);
@@ -448,6 +531,26 @@ public class menuGui extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_potiahnutKartuActionPerformed
 
+    private void pohybHoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohybHoreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pohybHoreActionPerformed
+
+    private void pohybVpravoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohybVpravoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pohybVpravoActionPerformed
+
+    private void pohybDoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohybDoleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pohybDoleActionPerformed
+
+    private void riadokZadanieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_riadokZadanieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_riadokZadanieActionPerformed
+
+    private void otocVlavoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_otocVlavoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_otocVlavoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -502,18 +605,29 @@ public class menuGui extends javax.swing.JFrame {
     private javax.swing.JLabel infoScore;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel kartaHraca;
     private javax.swing.JLabel naTahu;
+    private javax.swing.JButton otocVlavo;
+    private javax.swing.JButton otocVpravo;
     private javax.swing.JLabel pocetHracov;
     private javax.swing.JSlider pocetHracovSlider;
     private javax.swing.JTextField pocetHracovText;
+    private javax.swing.JButton pohybDole;
+    private javax.swing.JButton pohybHore;
+    private javax.swing.JButton pohybVlavo;
+    private javax.swing.JButton pohybVpravo;
     private javax.swing.JButton potiahnutKartu;
     private javax.swing.JLabel pozadieHry;
     private javax.swing.JLabel pozadieMenu;
     private javax.swing.JLabel pozadieNastavenia;
+    private javax.swing.JLabel riadokText;
+    private javax.swing.JTextField riadokZadanie;
     private javax.swing.JLabel skore;
+    private javax.swing.JLabel stlpecText;
+    private javax.swing.JTextField stlpecZadanie;
     private javax.swing.JLabel tah;
     private javax.swing.JRadioButton tlacitko12;
     private javax.swing.JRadioButton tlacitko24;
