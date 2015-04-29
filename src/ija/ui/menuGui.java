@@ -231,7 +231,7 @@ public class menuGui extends javax.swing.JFrame {
         kartaHraca.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         kartaHraca.setForeground(new java.awt.Color(240, 240, 240));
         hraPanel.add(kartaHraca);
-        kartaHraca.setBounds(820, 280, 40, 40);
+        kartaHraca.setBounds(820, 280, 80, 50);
 
         balicekKarty.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         balicekKarty.setForeground(new java.awt.Color(240, 240, 240));
@@ -367,14 +367,15 @@ public class menuGui extends javax.swing.JFrame {
             CardPack novybalicek = new CardPack(12,12);
             ALL.balicekKariet = novybalicek;
             balicekKarty.setText(Integer.toString(novybalicek.size()));
-            //balicekKarty.setText("ahoj");
         }
         else
         {
             //vygeneruj 24 kariet
             CardPack novybalicek = new CardPack(24,24);
+            ALL.balicekKariet = novybalicek;
             balicekKarty.setText(Integer.toString(novybalicek.size()));
         }
+        ALL.balicekKariet.shuffle();
         hraciaPlochaGUI1.removeAll();
         MazeBoard hraciaPlocha = MazeBoard.createMazeBoard(velkostPolaSlider.getValue());
         ALL.hraciePole = hraciaPlocha;
@@ -442,6 +443,7 @@ public class menuGui extends javax.swing.JFrame {
                 //kartaHraca.setText(Integer.toString(ALL.balicekKariet.popCard().getCard().getCode()));
                 ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha = ALL.balicekKariet.popCard().getCard().getCode();
                 kartaHraca.setText(Integer.toString(ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha));
+                balicekKarty.setText(Integer.toString(ALL.balicekKariet.size()));
             }
         }
     }//GEN-LAST:event_potiahnutKartuActionPerformed
