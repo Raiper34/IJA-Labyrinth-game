@@ -257,6 +257,11 @@ public class menuGui extends javax.swing.JFrame {
 
         potiahnutKartu.setText("POTIAHNUT KARTU");
         potiahnutKartu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 4, true));
+        potiahnutKartu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                potiahnutKartuActionPerformed(evt);
+            }
+        });
         hraPanel.add(potiahnutKartu);
         potiahnutKartu.setBounds(730, 340, 200, 30);
 
@@ -417,6 +422,10 @@ public class menuGui extends javax.swing.JFrame {
         // potiahnutie karty na disable ... 
         // potiahnutKartu.setEnabled(false);
     }//GEN-LAST:event_dalsiHracActionPerformed
+
+    private void potiahnutKartuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potiahnutKartuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_potiahnutKartuActionPerformed
 
     /**
      * @param args the command line arguments
