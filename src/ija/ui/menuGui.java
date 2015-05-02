@@ -6,6 +6,7 @@ import ija.homework2.board.MazeBoard;
 import ija.homework1.treasure.CardPack;
 import ija.homework1.treasure.TreasureCard;
 import ija.homework1.treasure.Treasure;
+import ija.homework2.board.MazeField;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -57,9 +58,11 @@ public class menuGui extends javax.swing.JFrame {
         pozadieNastavenia = new javax.swing.JLabel();
         hraPanel = new javax.swing.JPanel();
         pohybDole = new javax.swing.JButton();
+        volnaKartaGUI1 = new ija.ui.volnaKartaGUI();
         pohybVpravo = new javax.swing.JButton();
         pohybVlavo = new javax.swing.JButton();
         pohybHore = new javax.swing.JButton();
+        pokladyGUI1 = new ija.ui.pokladyGUI();
         hraciaPlochaGUI1 = new ija.ui.hraciaPlochaGUI();
         otocVpravo = new javax.swing.JButton();
         otocVlavo = new javax.swing.JButton();
@@ -246,6 +249,8 @@ public class menuGui extends javax.swing.JFrame {
         });
         hraPanel.add(pohybDole);
         pohybDole.setBounds(770, 380, 60, 60);
+        hraPanel.add(volnaKartaGUI1);
+        volnaKartaGUI1.setBounds(720, 570, 100, 100);
 
         pohybVpravo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pohybVpravo.setPreferredSize(new java.awt.Dimension(60, 60));
@@ -272,8 +277,10 @@ public class menuGui extends javax.swing.JFrame {
         });
         hraPanel.add(pohybHore);
         pohybHore.setBounds(770, 260, 60, 60);
+        hraPanel.add(pokladyGUI1);
+        pokladyGUI1.setBounds(40, -20, 610, 50);
         hraPanel.add(hraciaPlochaGUI1);
-        hraciaPlochaGUI1.setBounds(40, 30, 600, 600);
+        hraciaPlochaGUI1.setBounds(40, 30, 610, 620);
         hraPanel.add(otocVpravo);
         otocVpravo.setBounds(790, 690, 60, 50);
 
@@ -308,6 +315,11 @@ public class menuGui extends javax.swing.JFrame {
         riadokZadanie.setBounds(940, 450, 60, 30);
 
         jButton3.setText("VLOZIT VOLNY KAMEN");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
         hraPanel.add(jButton3);
         jButton3.setBounds(680, 470, 170, 50);
 
@@ -459,13 +471,15 @@ public class menuGui extends javax.swing.JFrame {
             balicekKarty.setText(Integer.toString(novybalicek.size()));
         }
         ALL.balicekKariet.shuffle();
-        hraciaPlochaGUI1.removeAll();
+        //hraciaPlochaGUI1.removeAll();
         MazeBoard hraciaPlocha = MazeBoard.createMazeBoard(velkostPolaSlider.getValue());
         ALL.hraciePole = hraciaPlocha;
         hraciaPlocha.newGame();
         hraci zoznamHracov = hraci.vytvorHracov(pocetHracovSlider.getValue(),velkostPolaSlider.getValue(),velkostPolaSlider.getValue());
         ALL.poleHracov = zoznamHracov;
         hraciaPlochaGUI1.vytvorGui();
+        volnaKartaGUI1.vytvorVolnuGui();
+        pokladyGUI1.vytvorPokladyGui();
     }//GEN-LAST:event_StartActionPerformed
 
     private void pocetHracovSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_pocetHracovSliderStateChanged
@@ -551,6 +565,14 @@ public class menuGui extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_otocVlavoActionPerformed
 
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here: Integer.parseInt(3)
+        MazeField pomocny = ALL.hraciePole.get(Integer.parseInt(riadokZadanie.getText()), Integer.parseInt(stlpecZadanie.getText()));
+	ALL.hraciePole.shift(pomocny);
+        hraciaPlochaGUI1.vytvorGui();
+        volnaKartaGUI1.vytvorVolnuGui();
+    }//GEN-LAST:event_jButton3MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -619,6 +641,7 @@ public class menuGui extends javax.swing.JFrame {
     private javax.swing.JButton pohybHore;
     private javax.swing.JButton pohybVlavo;
     private javax.swing.JButton pohybVpravo;
+    private ija.ui.pokladyGUI pokladyGUI1;
     private javax.swing.JButton potiahnutKartu;
     private javax.swing.JLabel pozadieHry;
     private javax.swing.JLabel pozadieMenu;
@@ -636,5 +659,6 @@ public class menuGui extends javax.swing.JFrame {
     private javax.swing.JLabel velkostPola1;
     private javax.swing.JSlider velkostPolaSlider;
     private javax.swing.JTextField velkostPolaText;
+    private ija.ui.volnaKartaGUI volnaKartaGUI1;
     // End of variables declaration//GEN-END:variables
 }

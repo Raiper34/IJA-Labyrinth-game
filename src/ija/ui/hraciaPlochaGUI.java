@@ -24,7 +24,6 @@ import javax.swing.*;
 public class hraciaPlochaGUI extends JPanel
 {
     JPanel polickaGui[][];
-    JPanel pokladyGui[][];
     MazeBoard hraciaPlocha;
     
     public hraciaPlochaGUI()
@@ -32,23 +31,20 @@ public class hraciaPlochaGUI extends JPanel
         this.hraciaPlocha = null;
         setLayout(null);
         this.polickaGui = new JPanel[12][12];
-        this.pokladyGui = new JPanel[12][12];
         //vytvorGui();
     }
     
     public void vytvorGui()
     {
+        removeAll();
+        revalidate();
+        repaint();
         this.hraciaPlocha = ALL.hraciePole;
         setLayout(new GridLayout(this.hraciaPlocha.riadky, this.hraciaPlocha.riadky, 0, 0));
         for(int i = 1; i <= this.hraciaPlocha.riadky; i++)
         {
             for(int j = 1; j <= this.hraciaPlocha.riadky; j++)
             {
-                /*try {
-                    this.polickaGui[i][j] = new JButton(new ImageIcon(ImageIO.read(getClass().getResource("/ija/ui/cesta_tecko_dolava-doprava-dole.png"))));
-                } catch (IOException ex) {
-                    Logger.getLogger(hraciaPlochaGUI.class.getName()).log(Level.SEVERE, null, ex);
-                }*/
                 int menoU = 1;
                 int menoD = 1;
                 int menoL = 1;
@@ -88,7 +84,6 @@ public class hraciaPlochaGUI extends JPanel
                 String meno = Integer.toString(menoU) + Integer.toString(menoR) + Integer.toString(menoD) + Integer.toString(menoL);
                 System.out.println(meno);
                 this.polickaGui[i][j] = new JPanel();
-                this.pokladyGui[i][j] = new JPanel();
                 try {
                     BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/" + meno +".png"));
                     Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
@@ -96,16 +91,8 @@ public class hraciaPlochaGUI extends JPanel
                 } catch (IOException ex) {
                     Logger.getLogger(hraciaPlochaGUI.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                try {
-                    BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/karta.png"));
-                    Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
-                    this.pokladyGui[i][j].add(new JLabel(new ImageIcon(dimg)));
-                } catch (IOException ex) {
-                    Logger.getLogger(hraciaPlochaGUI.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                setOpaque(false);
-                this.polickaGui[i][j].setOpaque(false);
-                this.pokladyGui[i][j].setOpaque(false);
+                //setOpaque(false);
+                //this.polickaGui[i][j].setOpaque(false);
                 add(this.polickaGui[i][j]);
                 //add(new JButton());5
             }
