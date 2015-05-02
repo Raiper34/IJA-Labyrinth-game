@@ -73,6 +73,7 @@ public class volnaKartaGUI extends JPanel
         } catch (IOException ex) {
             Logger.getLogger(hraciaPlochaGUI.class.getName()).log(Level.SEVERE, null, ex);
         }   
+        setOpaque(false);
     }
     
 }

@@ -278,7 +278,7 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.add(pohybHore);
         pohybHore.setBounds(770, 260, 60, 60);
         hraPanel.add(pokladyGUI1);
-        pokladyGUI1.setBounds(40, -20, 610, 50);
+        pokladyGUI1.setBounds(40, 30, 610, 620);
         hraPanel.add(hraciaPlochaGUI1);
         hraciaPlochaGUI1.setBounds(40, 30, 610, 620);
         hraPanel.add(otocVpravo);

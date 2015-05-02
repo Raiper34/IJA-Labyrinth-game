@@ -36,6 +36,9 @@ public class pokladyGUI extends JPanel
     
     public void vytvorPokladyGui()
     {
+        removeAll();
+        revalidate();
+        repaint();
         this.hraciaPlocha = ALL.hraciePole;
         setLayout(new GridLayout(this.hraciaPlocha.riadky, this.hraciaPlocha.riadky, 0, 0));
         for(int i = 1; i <= this.hraciaPlocha.riadky; i++)
@@ -46,7 +49,7 @@ public class pokladyGUI extends JPanel
                 this.pokladyGui[i][j] = new JPanel();
                 try {
                     BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/karta.png"));
-                    Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
+                    Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                     this.pokladyGui[i][j].add(new JLabel(new ImageIcon(dimg)));
                 } catch (IOException ex) {
                     Logger.getLogger(hraciaPlochaGUI.class.getName()).log(Level.SEVERE, null, ex);

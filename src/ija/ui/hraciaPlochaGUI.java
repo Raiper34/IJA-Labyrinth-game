@@ -6,7 +6,6 @@
 package ija.ui;
 import ija.elements.ALL;
 import ija.homework2.board.MazeBoard;
-import ija.homework2.board.MazeCard;
 
 import java.awt.GridLayout;
 import java.awt.Image;
@@ -86,13 +85,13 @@ public class hraciaPlochaGUI extends JPanel
                 this.polickaGui[i][j] = new JPanel();
                 try {
                     BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/" + meno +".png"));
-                    Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
+                    Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                     this.polickaGui[i][j].add(new JLabel(new ImageIcon(dimg)));
                 } catch (IOException ex) {
                     Logger.getLogger(hraciaPlochaGUI.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                //setOpaque(false);
-                //this.polickaGui[i][j].setOpaque(false);
+                setOpaque(false);
+                this.polickaGui[i][j].setOpaque(false);
                 add(this.polickaGui[i][j]);
                 //add(new JButton());5
             }
