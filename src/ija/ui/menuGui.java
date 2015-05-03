@@ -92,6 +92,10 @@ public class menuGui extends javax.swing.JFrame {
         infoScore = new javax.swing.JLabel();
         infoKarta = new javax.swing.JLabel();
         pozadieHry = new javax.swing.JLabel();
+        VyhraPanel = new javax.swing.JPanel();
+        vyherca = new javax.swing.JLabel();
+        vyhralHrac1 = new javax.swing.JLabel();
+        toMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -466,6 +470,29 @@ public class menuGui extends javax.swing.JFrame {
 
         ParentPanel.add(hraPanel, "card4");
 
+        VyhraPanel.setLayout(null);
+
+        vyherca.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
+        vyherca.setText("--");
+        VyhraPanel.add(vyherca);
+        vyherca.setBounds(160, 140, 60, 50);
+
+        vyhralHrac1.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
+        vyhralHrac1.setText("Vyhral hrac");
+        VyhraPanel.add(vyhralHrac1);
+        vyhralHrac1.setBounds(80, 60, 250, 80);
+
+        toMenu.setText("Menu");
+        toMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toMenuActionPerformed(evt);
+            }
+        });
+        VyhraPanel.add(toMenu);
+        toMenu.setBounds(310, 260, 73, 23);
+
+        ParentPanel.add(VyhraPanel, "card5");
+
         getContentPane().add(ParentPanel, java.awt.BorderLayout.CENTER);
 
         pack();
@@ -546,6 +573,7 @@ public class menuGui extends javax.swing.JFrame {
         if(pocetHracovSlider.getValue() >= ALL.hracNaTahu)
         {
            tah.setText(Integer.toString(ALL.hracNaTahu));
+           
         }
         else
         {
@@ -562,7 +590,7 @@ public class menuGui extends javax.swing.JFrame {
             kartaHraca.setText(Integer.toString(ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha));
         }
         hracovaKartaGUI1.vytvorHracKartGui();
-        
+        skore.setText(Integer.toString(ALL.poleHracov.poleHracov[ALL.hracNaTahu].ziskaneBody));
         
         // + treba pridat podmienku 
         // ak nasledujuci hrac (s cislom hracTeraz) ma kartu tak sa nastavi
@@ -672,7 +700,29 @@ public class menuGui extends javax.swing.JFrame {
     }//GEN-LAST:event_pohybVlavoActionPerformed
 
     private void zoberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoberActionPerformed
-        // TODO add your handling code here:
+        int yPozH=ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX;
+        int xPozH=ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaY;
+        if(ALL.hraciePole.plocha[xPozH][yPozH].karta.uloha == ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha)
+        {
+            ALL.hraciePole.plocha[xPozH][yPozH].karta.uloha = -1;
+            ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha = -1;
+            ALL.poleHracov.poleHracov[ALL.hracNaTahu].ziskaneBody = ALL.poleHracov.poleHracov[ALL.hracNaTahu].ziskaneBody + 1;
+            skore.setText(Integer.toString(ALL.poleHracov.poleHracov[ALL.hracNaTahu].ziskaneBody));
+            pokladyGUI1.vytvorPokladyGui();
+            hracovaKartaGUI1.vytvorHracKartGui();
+            
+            
+            if(ALL.poleHracov.poleHracov[ALL.hracNaTahu].ziskaneBody == ALL.balicekKariet.maxSize/pocetHracovSlider.getValue())
+            {
+                ParentPanel.removeAll();
+                ParentPanel.add(VyhraPanel);
+                ParentPanel.repaint();
+                ParentPanel.revalidate();
+                vyherca.setText(Integer.toString(ALL.hracNaTahu));
+            }
+            
+            
+        }
     }//GEN-LAST:event_zoberActionPerformed
 
     private void otocVpravoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_otocVpravoMouseClicked
@@ -684,6 +734,13 @@ public class menuGui extends javax.swing.JFrame {
         ALL.hraciePole.volnaKarta.turnLeft();
         volnaKartaGUI1.vytvorVolnuGui();
     }//GEN-LAST:event_otocVlavoMouseClicked
+
+    private void toMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toMenuActionPerformed
+        ParentPanel.removeAll();
+        ParentPanel.add(MenuPanel);
+        ParentPanel.repaint();
+        ParentPanel.revalidate();
+    }//GEN-LAST:event_toMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -729,6 +786,7 @@ public class menuGui extends javax.swing.JFrame {
     private javax.swing.JLabel PocetHracoShow;
     private javax.swing.JButton Start;
     private javax.swing.JButton UkoncitHru;
+    private javax.swing.JPanel VyhraPanel;
     private javax.swing.JLabel balicekKarty;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton dalsiHrac;
@@ -768,6 +826,7 @@ public class menuGui extends javax.swing.JFrame {
     private javax.swing.JLabel tah;
     private javax.swing.JRadioButton tlacitko12;
     private javax.swing.JRadioButton tlacitko24;
+    private javax.swing.JButton toMenu;
     private javax.swing.JButton ulozitHru;
     private javax.swing.JLabel velkostPola;
     private javax.swing.JLabel velkostPola1;
@@ -775,6 +834,8 @@ public class menuGui extends javax.swing.JFrame {
     private javax.swing.JTextField velkostPolaText;
     private ija.ui.volnaKartaGUI volnaKartaGUI1;
     private ija.ui.volnyPokladGUI volnyPokladGUI1;
+    private javax.swing.JLabel vyherca;
+    private javax.swing.JLabel vyhralHrac1;
     private javax.swing.JButton zober;
     // End of variables declaration//GEN-END:variables
 }
