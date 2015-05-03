@@ -579,6 +579,7 @@ public class menuGui extends javax.swing.JFrame {
 	ALL.hraciePole.shift(pomocny);
         hraciaPlochaGUI1.vytvorGui();
         volnaKartaGUI1.vytvorVolnuGui();
+        pokladyGUI1.vytvorPokladyGui();
     }//GEN-LAST:event_jButton3MouseClicked
 
     /**
