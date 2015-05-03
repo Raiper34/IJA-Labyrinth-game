@@ -48,7 +48,7 @@ public class hraciGUI extends JPanel
                 this.hraciGuiPanel[i][j] = new JPanel();
                 
                 
-                
+                //if()
                 /*try {
                     BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/karta.png"));
                     Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
