@@ -58,8 +58,10 @@ public class menuGui extends javax.swing.JFrame {
         pozadieNastavenia = new javax.swing.JLabel();
         hraPanel = new javax.swing.JPanel();
         pohybDole = new javax.swing.JButton();
+        volnyPokladGUI1 = new ija.ui.volnyPokladGUI();
         volnaKartaGUI1 = new ija.ui.volnaKartaGUI();
         pohybVpravo = new javax.swing.JButton();
+        hracovaKartaGUI1 = new ija.ui.hracovaKartaGUI();
         pohybVlavo = new javax.swing.JButton();
         pohybHore = new javax.swing.JButton();
         hraciGUI1 = new ija.ui.hraciGUI();
@@ -250,6 +252,8 @@ public class menuGui extends javax.swing.JFrame {
         });
         hraPanel.add(pohybDole);
         pohybDole.setBounds(770, 380, 60, 60);
+        hraPanel.add(volnyPokladGUI1);
+        volnyPokladGUI1.setBounds(720, 570, 100, 100);
         hraPanel.add(volnaKartaGUI1);
         volnaKartaGUI1.setBounds(720, 570, 100, 100);
 
@@ -262,6 +266,8 @@ public class menuGui extends javax.swing.JFrame {
         });
         hraPanel.add(pohybVpravo);
         pohybVpravo.setBounds(830, 320, 60, 60);
+        hraPanel.add(hracovaKartaGUI1);
+        hracovaKartaGUI1.setBounds(910, 150, 80, 80);
 
         pohybVlavo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pohybVlavo.setPreferredSize(new java.awt.Dimension(60, 60));
@@ -329,7 +335,7 @@ public class menuGui extends javax.swing.JFrame {
         kartaHraca.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         kartaHraca.setForeground(new java.awt.Color(240, 240, 240));
         hraPanel.add(kartaHraca);
-        kartaHraca.setBounds(960, 150, 80, 50);
+        kartaHraca.setBounds(1010, 280, 80, 50);
 
         balicekKarty.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         balicekKarty.setForeground(new java.awt.Color(240, 240, 240));
@@ -360,7 +366,7 @@ public class menuGui extends javax.swing.JFrame {
             }
         });
         hraPanel.add(potiahnutKartu);
-        potiahnutKartu.setBounds(870, 210, 140, 40);
+        potiahnutKartu.setBounds(880, 240, 140, 40);
 
         dalsiHrac.setText("DALSI HRAC");
         dalsiHrac.addActionListener(new java.awt.event.ActionListener() {
@@ -423,7 +429,7 @@ public class menuGui extends javax.swing.JFrame {
         infoKarta.setText("TVOJA KARTA JE:");
         infoKarta.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         hraPanel.add(infoKarta);
-        infoKarta.setBounds(750, 170, 200, 26);
+        infoKarta.setBounds(690, 180, 200, 26);
 
         pozadieHry.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/black3.jpg"))); // NOI18N
         hraPanel.add(pozadieHry);
@@ -486,6 +492,7 @@ public class menuGui extends javax.swing.JFrame {
         volnaKartaGUI1.vytvorVolnuGui();
         pokladyGUI1.vytvorPokladyGui();
         hraciGUI1.vytvorHraciGui();
+        volnyPokladGUI1.vytvorVolnuPGui();
         
     }//GEN-LAST:event_StartActionPerformed
 
@@ -525,6 +532,7 @@ public class menuGui extends javax.swing.JFrame {
         {
             kartaHraca.setText(Integer.toString(ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha));
         }
+        hracovaKartaGUI1.vytvorHracKartGui();
         
         
         // + treba pridat podmienku 
@@ -550,6 +558,7 @@ public class menuGui extends javax.swing.JFrame {
                 balicekKarty.setText(Integer.toString(ALL.balicekKariet.size()));
             }
         }
+        hracovaKartaGUI1.vytvorHracKartGui();
     }//GEN-LAST:event_potiahnutKartuActionPerformed
 
     private void pohybHoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohybHoreActionPerformed
@@ -580,6 +589,7 @@ public class menuGui extends javax.swing.JFrame {
         hraciaPlochaGUI1.vytvorGui();
         volnaKartaGUI1.vytvorVolnuGui();
         pokladyGUI1.vytvorPokladyGui();
+        volnyPokladGUI1.vytvorVolnuPGui();
     }//GEN-LAST:event_jButton3MouseClicked
 
     /**
@@ -632,6 +642,7 @@ public class menuGui extends javax.swing.JFrame {
     private javax.swing.JPanel hraPanel;
     private ija.ui.hraciGUI hraciGUI1;
     private ija.ui.hraciaPlochaGUI hraciaPlochaGUI1;
+    private ija.ui.hracovaKartaGUI hracovaKartaGUI1;
     private javax.swing.JLabel infoKarta;
     private javax.swing.JLabel infoKarty;
     private javax.swing.JLabel infoScore;
@@ -670,5 +681,6 @@ public class menuGui extends javax.swing.JFrame {
     private javax.swing.JSlider velkostPolaSlider;
     private javax.swing.JTextField velkostPolaText;
     private ija.ui.volnaKartaGUI volnaKartaGUI1;
+    private ija.ui.volnyPokladGUI volnyPokladGUI1;
     // End of variables declaration//GEN-END:variables
 }
