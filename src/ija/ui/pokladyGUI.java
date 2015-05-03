@@ -49,8 +49,9 @@ public class pokladyGUI extends JPanel
                 this.pokladyGui[i][j] = new JPanel();
                 if(ALL.hraciePole.plocha[i][j].karta.uloha != - 1)
                 {
+                    System.out.println("Toto je ono: " + ALL.hraciePole.plocha[i][j].karta.uloha);
                     try {
-                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/karta.png"));
+                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/" + Integer.toString(ALL.hraciePole.plocha[i][j].karta.uloha) + ".png"));
                         Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                         this.pokladyGui[i][j].add(new JLabel(new ImageIcon(dimg)));
                     } catch (IOException ex) {
