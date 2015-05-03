@@ -29,50 +29,16 @@ public class volnyPokladGUI extends JPanel
         revalidate();
         repaint();
         MazeCard volnaKarta = ALL.hraciePole.getFreeCard();
-        int menoU = 1;
-        int menoD = 1;
-        int menoL = 1;
-        int menoR = 1;
-        if(volnaKarta.up.ordinal() != 4)
+        if(ALL.hraciePole.volnaKarta.uloha != -1)
         {
-            menoU = 1;
+            try {
+                BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/" + Integer.toString(ALL.hraciePole.volnaKarta.uloha) + ".png"));
+                Image dimg = obrazok.getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH);
+                add(new JLabel(new ImageIcon(dimg)));
+            } catch (IOException ex) {
+                Logger.getLogger(hraciaPlochaGUI.class.getName()).log(Level.SEVERE, null, ex);
+            }   
         }
-        else
-        {
-            menoU = 0;
-        }
-        if(volnaKarta.right.ordinal() != 4)
-        {
-            menoR = 1;
-        }
-        else
-        {
-            menoR = 0;
-        }
-        if(volnaKarta.down.ordinal() != 4)
-        {
-            menoD = 1;
-        }
-        else
-        {
-            menoD = 0;
-        }
-        if(volnaKarta.left.ordinal() != 4)
-        {
-            menoL = 1;
-        }
-        else
-        {
-            menoL = 0;
-        }
-        String meno = Integer.toString(menoU) + Integer.toString(menoR) + Integer.toString(menoD) + Integer.toString(menoL);
-        try {
-            BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/" + meno + ".png"));
-            Image dimg = obrazok.getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH);
-            add(new JLabel(new ImageIcon(dimg)));
-        } catch (IOException ex) {
-            Logger.getLogger(hraciaPlochaGUI.class.getName()).log(Level.SEVERE, null, ex);
-        }   
         setOpaque(false);
     }
     
