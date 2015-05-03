@@ -46,13 +46,19 @@ public class hraciGUI extends JPanel
             {
                 
                 this.hraciGuiPanel[i][j] = new JPanel();
-                /*try {
+                
+                
+                
+                try {
                     BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/karta.png"));
                     Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
-                    this.pokladyGui[i][j].add(new JLabel(new ImageIcon(dimg)));
+                    this.hraciGuiPanel[i][j].add(new JLabel(new ImageIcon(dimg)));
                 } catch (IOException ex) {
                     Logger.getLogger(hraciaPlochaGUI.class.getName()).log(Level.SEVERE, null, ex);
-                }*/
+                }
+                
+                
+                
                 setOpaque(false);
                 this.hraciGuiPanel[i][j].setOpaque(false);
                 add(this.hraciGuiPanel[i][j]);

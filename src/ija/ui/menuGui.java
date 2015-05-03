@@ -484,6 +484,7 @@ public class menuGui extends javax.swing.JFrame {
         volnaKartaGUI1.vytvorVolnuGui();
         pokladyGUI1.vytvorPokladyGui();
         hraciGUI1.vytvorPokladyGui();
+        
     }//GEN-LAST:event_StartActionPerformed
 
     private void pocetHracovSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_pocetHracovSliderStateChanged
@@ -554,7 +555,8 @@ public class menuGui extends javax.swing.JFrame {
     }//GEN-LAST:event_pohybHoreActionPerformed
 
     private void pohybVpravoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohybVpravoActionPerformed
-        // TODO add your handling code here:
+        
+        //ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX = ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX + 1;
     }//GEN-LAST:event_pohybVpravoActionPerformed
 
     private void pohybDoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohybDoleActionPerformed
