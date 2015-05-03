@@ -1,8 +1,12 @@
 <project>
 
     <target name="clean">
-        <delete dir="build/ija"/>
-        <delete dir="dest-client/ija2015-client.jar"/>
+        <delete includeemptydirs="true">
+			<fileset dir="build" includes="**/*"/>
+		</delete>
+        <delete includeemptydirs="true">
+			<fileset dir="dest-client" includes="**/*"/>
+		</delete>
         <delete includeemptydirs="true">
 			<fileset dir="doc" includes="**/*"/>
 		</delete>
