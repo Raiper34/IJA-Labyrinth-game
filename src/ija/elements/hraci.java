@@ -34,23 +34,23 @@ public class hraci {
         }
         else if(pocetHracov == 2)
         {
-            zoznamHracov.poleHracov[1] = new hrac(0, 0, -1, 0);
+            zoznamHracov.poleHracov[1] = new hrac(1, 1, -1, 0);
             zoznamHracov.poleHracov[2] = new hrac(pocetStlpcov, pocetRiadkov, -1, 0);
             System.out.println("Vytvoril som hracov 2");
         }
         else if(pocetHracov == 3)
         {
-            zoznamHracov.poleHracov[1] = new hrac(0, 0, -1, 0);
+            zoznamHracov.poleHracov[1] = new hrac(1, 1, -1, 0);
             zoznamHracov.poleHracov[2] = new hrac(pocetStlpcov, pocetRiadkov, -1, 0);
-            zoznamHracov.poleHracov[3] = new hrac(0, pocetRiadkov, -1, 0);
+            zoznamHracov.poleHracov[3] = new hrac(1, pocetRiadkov, -1, 0);
             System.out.println("Vytvoril som hracov 3");
         }
         else if(pocetHracov == 4)
         {
-            zoznamHracov.poleHracov[1] = new hrac(0, 0, -1, 0);
+            zoznamHracov.poleHracov[1] = new hrac(1, 1, -1, 0);
             zoznamHracov.poleHracov[2] = new hrac(pocetStlpcov, pocetRiadkov, -1, 0);
-            zoznamHracov.poleHracov[3] = new hrac(0, pocetRiadkov, -1, 0);
-            zoznamHracov.poleHracov[4] = new hrac(pocetStlpcov, 0, -1, 0);
+            zoznamHracov.poleHracov[3] = new hrac(1, pocetRiadkov, -1, 0);
+            zoznamHracov.poleHracov[4] = new hrac(pocetStlpcov, 1, -1, 0);
             System.out.println("Vytvoril som hracov 4");
         }
         return zoznamHracov;

@@ -62,8 +62,8 @@ public class menuGui extends javax.swing.JFrame {
         pohybVpravo = new javax.swing.JButton();
         pohybVlavo = new javax.swing.JButton();
         pohybHore = new javax.swing.JButton();
-        pokladyGUI1 = new ija.ui.pokladyGUI();
         hraciGUI1 = new ija.ui.hraciGUI();
+        pokladyGUI1 = new ija.ui.pokladyGUI();
         hraciaPlochaGUI1 = new ija.ui.hraciaPlochaGUI();
         otocVpravo = new javax.swing.JButton();
         otocVlavo = new javax.swing.JButton();
@@ -278,10 +278,10 @@ public class menuGui extends javax.swing.JFrame {
         });
         hraPanel.add(pohybHore);
         pohybHore.setBounds(770, 260, 60, 60);
-        hraPanel.add(pokladyGUI1);
-        pokladyGUI1.setBounds(40, 30, 610, 620);
         hraPanel.add(hraciGUI1);
         hraciGUI1.setBounds(40, 30, 610, 620);
+        hraPanel.add(pokladyGUI1);
+        pokladyGUI1.setBounds(40, 30, 610, 620);
         hraPanel.add(hraciaPlochaGUI1);
         hraciaPlochaGUI1.setBounds(40, 30, 610, 620);
         hraPanel.add(otocVpravo);
