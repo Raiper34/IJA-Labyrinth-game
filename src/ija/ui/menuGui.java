@@ -76,6 +76,7 @@ public class menuGui extends javax.swing.JFrame {
         stlpecText = new javax.swing.JLabel();
         stlpecZadanie = new javax.swing.JTextField();
         riadokZadanie = new javax.swing.JTextField();
+        UNDObutton = new javax.swing.JButton();
         vlozVolnuKartu = new javax.swing.JButton();
         kartaHraca = new javax.swing.JLabel();
         balicekKarty = new javax.swing.JLabel();
@@ -356,6 +357,15 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.add(riadokZadanie);
         riadokZadanie.setBounds(940, 450, 60, 30);
 
+        UNDObutton.setText("UNDO");
+        UNDObutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UNDObuttonActionPerformed(evt);
+            }
+        });
+        hraPanel.add(UNDObutton);
+        UNDObutton.setBounds(710, 470, 120, 50);
+
         vlozVolnuKartu.setText("VLOZIT VOLNY KAMEN");
         vlozVolnuKartu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -554,6 +564,7 @@ public class menuGui extends javax.swing.JFrame {
         pokladyGUI1.vytvorPokladyGui();
         hraciGUI1.vytvorHraciGui();
         volnyPokladGUI1.vytvorVolnuPGui();
+        UNDObutton.setVisible(false);
         
     }//GEN-LAST:event_StartActionPerformed
 
@@ -597,6 +608,7 @@ public class menuGui extends javax.swing.JFrame {
         hracovaKartaGUI1.vytvorHracKartGui();
         skore.setText(Integer.toString(ALL.poleHracov.poleHracov[ALL.hracNaTahu].ziskaneBody));
         vlozVolnuKartu.setVisible(true);
+        UNDObutton.setVisible(false);
         
         // + treba pridat podmienku 
         // ak nasledujuci hrac (s cislom hracTeraz) ma kartu tak sa nastavi
@@ -689,6 +701,10 @@ public class menuGui extends javax.swing.JFrame {
         volnyPokladGUI1.vytvorVolnuPGui();
         hraciGUI1.vytvorHraciGui();
         vlozVolnuKartu.setVisible(false);
+        
+        ALL.undoX = Integer.parseInt(riadokZadanie.getText());
+        ALL.undoY = Integer.parseInt(stlpecZadanie.getText()); 
+        UNDObutton.setVisible(true);
     }//GEN-LAST:event_vlozVolnuKartuMouseClicked
 
     private void pohybVlavoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohybVlavoActionPerformed
@@ -754,6 +770,37 @@ public class menuGui extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_vlozVolnuKartuActionPerformed
 
+    private void UNDObuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UNDObuttonActionPerformed
+        MazeField pomocny;
+        if (ALL.undoX==1)
+        {
+            pomocny = ALL.hraciePole.get(ALL.hraciePole.riadky, ALL.undoY);
+        }
+        else if (ALL.undoX==ALL.hraciePole.riadky)
+        {
+            pomocny = ALL.hraciePole.get(1, ALL.undoY);
+        }
+        else if (ALL.undoY==1)
+        {
+            pomocny = ALL.hraciePole.get(ALL.undoX, ALL.hraciePole.riadky);
+        }
+        else  
+        {
+            pomocny = ALL.hraciePole.get(ALL.undoX, 1);
+        }
+        
+        
+        //MazeField pomocny = ALL.hraciePole.get(ALL.undoY, ALL.undoX);
+	ALL.hraciePole.shift(pomocny);
+        hraciaPlochaGUI1.vytvorGui();
+        volnaKartaGUI1.vytvorVolnuGui();
+        pokladyGUI1.vytvorPokladyGui();
+        volnyPokladGUI1.vytvorVolnuPGui();
+        hraciGUI1.vytvorHraciGui();
+        vlozVolnuKartu.setVisible(true);
+        UNDObutton.setVisible(false);
+    }//GEN-LAST:event_UNDObuttonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -797,6 +844,7 @@ public class menuGui extends javax.swing.JFrame {
     private javax.swing.JPanel ParentPanel;
     private javax.swing.JLabel PocetHracoShow;
     private javax.swing.JButton Start;
+    private javax.swing.JButton UNDObutton;
     private javax.swing.JButton UkoncitHru;
     private javax.swing.JPanel VyhraPanel;
     private javax.swing.JLabel balicekKarty;
