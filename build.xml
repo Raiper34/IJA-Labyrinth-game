@@ -1,0 +1,29 @@
+<project>
+
+    <target name="clean">
+        <delete dir="build/ija"/>
+        <delete dir="dest-client/ija2015-client.jar"/>
+        <delete includeemptydirs="true">
+			<fileset dir="doc" includes="**/*"/>
+		</delete>
+    </target>
+
+    <target name="compile">
+        <javac srcdir="src" destdir="build"/>
+        <jar destfile="dest-client/ija2015-client.jar" basedir="build">
+            <manifest>
+                <attribute name="Main-Class" value="ija.ija"/>
+            </manifest>
+        </jar>
+        <javadoc packagenames="src" sourcepath="src" destdir="doc">
+       		<fileset dir="src">
+                <include name="**" />
+           </fileset>
+    	</javadoc>
+    </target>
+
+    <target name="run">
+        <java jar="dest-client/ija2015-client.jar" fork="true"/>
+    </target>
+
+</project>
