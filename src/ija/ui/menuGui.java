@@ -251,6 +251,7 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.setPreferredSize(new java.awt.Dimension(1024, 768));
         hraPanel.setLayout(null);
 
+        pohybDole.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/Arrows/down.png"))); // NOI18N
         pohybDole.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pohybDole.setPreferredSize(new java.awt.Dimension(60, 60));
         pohybDole.addActionListener(new java.awt.event.ActionListener() {
@@ -265,6 +266,7 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.add(volnaKartaGUI1);
         volnaKartaGUI1.setBounds(720, 570, 100, 100);
 
+        pohybVpravo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/Arrows/right.png"))); // NOI18N
         pohybVpravo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pohybVpravo.setPreferredSize(new java.awt.Dimension(60, 60));
         pohybVpravo.addActionListener(new java.awt.event.ActionListener() {
@@ -277,6 +279,7 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.add(hracovaKartaGUI1);
         hracovaKartaGUI1.setBounds(910, 150, 80, 80);
 
+        zober.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/Arrows/ber.png"))); // NOI18N
         zober.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         zober.setPreferredSize(new java.awt.Dimension(60, 60));
         zober.addActionListener(new java.awt.event.ActionListener() {
@@ -287,6 +290,7 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.add(zober);
         zober.setBounds(770, 320, 60, 60);
 
+        pohybVlavo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/Arrows/left.png"))); // NOI18N
         pohybVlavo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pohybVlavo.setPreferredSize(new java.awt.Dimension(60, 60));
         pohybVlavo.addActionListener(new java.awt.event.ActionListener() {
@@ -297,7 +301,7 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.add(pohybVlavo);
         pohybVlavo.setBounds(710, 320, 60, 60);
 
-        pohybHore.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/up.png"))); // NOI18N
+        pohybHore.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/Arrows/up.png"))); // NOI18N
         pohybHore.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pohybHore.setPreferredSize(new java.awt.Dimension(60, 60));
         pohybHore.addActionListener(new java.awt.event.ActionListener() {
@@ -314,14 +318,18 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.add(hraciaPlochaGUI1);
         hraciaPlochaGUI1.setBounds(40, 30, 610, 620);
 
+        otocVpravo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/Arrows/rotateR.png"))); // NOI18N
+        otocVpravo.setPreferredSize(new java.awt.Dimension(60, 60));
         otocVpravo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 otocVpravoMouseClicked(evt);
             }
         });
         hraPanel.add(otocVpravo);
-        otocVpravo.setBounds(790, 690, 60, 50);
+        otocVpravo.setBounds(790, 690, 60, 60);
 
+        otocVlavo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/Arrows/rotateL.png"))); // NOI18N
+        otocVlavo.setPreferredSize(new java.awt.Dimension(60, 60));
         otocVlavo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 otocVlavoMouseClicked(evt);
@@ -333,7 +341,7 @@ public class menuGui extends javax.swing.JFrame {
             }
         });
         hraPanel.add(otocVlavo);
-        otocVlavo.setBounds(690, 690, 60, 50);
+        otocVlavo.setBounds(690, 690, 60, 60);
 
         riadokText.setFont(new java.awt.Font("Cooper Black", 1, 18)); // NOI18N
         riadokText.setForeground(new java.awt.Color(255, 255, 255));
@@ -364,7 +372,7 @@ public class menuGui extends javax.swing.JFrame {
             }
         });
         hraPanel.add(UNDObutton);
-        UNDObutton.setBounds(710, 470, 120, 50);
+        UNDObutton.setBounds(680, 470, 170, 50);
 
         vlozVolnuKartu.setText("VLOZIT VOLNY KAMEN");
         vlozVolnuKartu.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -487,15 +495,15 @@ public class menuGui extends javax.swing.JFrame {
 
         VyhraPanel.setLayout(null);
 
-        vyherca.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
+        vyherca.setFont(new java.awt.Font("Century", 1, 100)); // NOI18N
         vyherca.setText("--");
         VyhraPanel.add(vyherca);
-        vyherca.setBounds(160, 140, 60, 50);
+        vyherca.setBounds(460, 330, 210, 130);
 
-        vyhralHrac1.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
+        vyhralHrac1.setFont(new java.awt.Font("Century", 1, 120)); // NOI18N
         vyhralHrac1.setText("Vyhral hrac");
         VyhraPanel.add(vyhralHrac1);
-        vyhralHrac1.setBounds(80, 60, 250, 80);
+        vyhralHrac1.setBounds(110, 70, 790, 160);
 
         toMenu.setText("Menu");
         toMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -504,7 +512,7 @@ public class menuGui extends javax.swing.JFrame {
             }
         });
         VyhraPanel.add(toMenu);
-        toMenu.setBounds(310, 260, 73, 23);
+        toMenu.setBounds(420, 580, 130, 80);
 
         ParentPanel.add(VyhraPanel, "card5");
 
@@ -634,6 +642,7 @@ public class menuGui extends javax.swing.JFrame {
             }
         }
         hracovaKartaGUI1.vytvorHracKartGui();
+        UNDObutton.setVisible(false);
     }//GEN-LAST:event_potiahnutKartuActionPerformed
 
     private void pohybHoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohybHoreActionPerformed
@@ -644,7 +653,8 @@ public class menuGui extends javax.swing.JFrame {
           if ((ALL.hraciePole.plocha[xPozH][yPozH].karta.up != CANGO.NULL) && (ALL.hraciePole.plocha[xPozH-1][yPozH].karta.down != CANGO.NULL) )
             {
             ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaY = ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaY - 1;
-            hraciGUI1.vytvorHraciGui();  
+            hraciGUI1.vytvorHraciGui(); 
+            UNDObutton.setVisible(false);
             }  
         }
         
@@ -661,7 +671,8 @@ public class menuGui extends javax.swing.JFrame {
           if ((ALL.hraciePole.plocha[xPozH][yPozH].karta.right != CANGO.NULL) && (ALL.hraciePole.plocha[xPozH][yPozH+1].karta.left != CANGO.NULL) )
             {
             ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX = ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX + 1;
-            hraciGUI1.vytvorHraciGui();  
+            hraciGUI1.vytvorHraciGui(); 
+            UNDObutton.setVisible(false);
             }  
         }
         
@@ -677,7 +688,8 @@ public class menuGui extends javax.swing.JFrame {
           if ((ALL.hraciePole.plocha[xPozH][yPozH].karta.down != CANGO.NULL) && (ALL.hraciePole.plocha[xPozH+1][yPozH].karta.up != CANGO.NULL) )
             {
             ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaY = ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaY + 1;
-            hraciGUI1.vytvorHraciGui();  
+            hraciGUI1.vytvorHraciGui(); 
+            UNDObutton.setVisible(false);
             }  
         }
         
@@ -693,18 +705,34 @@ public class menuGui extends javax.swing.JFrame {
 
     private void vlozVolnuKartuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vlozVolnuKartuMouseClicked
         // TODO add your handling code here: Integer.parseInt(3)
-        MazeField pomocny = ALL.hraciePole.get(Integer.parseInt(riadokZadanie.getText()), Integer.parseInt(stlpecZadanie.getText()));
-	ALL.hraciePole.shift(pomocny);
-        hraciaPlochaGUI1.vytvorGui();
-        volnaKartaGUI1.vytvorVolnuGui();
-        pokladyGUI1.vytvorPokladyGui();
-        volnyPokladGUI1.vytvorVolnuPGui();
-        hraciGUI1.vytvorHraciGui();
-        vlozVolnuKartu.setVisible(false);
+        int currentX = Integer.parseInt(riadokZadanie.getText());
+        int currentY = Integer.parseInt(stlpecZadanie.getText());
+        int max = ALL.hraciePole.riadky;
+        if((ALL.undoX == 1 && currentX == max && ALL.undoY == currentY ) || (ALL.undoX == max && currentX == 1 && ALL.undoY == currentY))
+        {
+            System.out.println("chyba :D");
+        }
+        else if ((ALL.undoY == 1 && currentY == max && ALL.undoX == currentX ) || (ALL.undoY == max && currentY == 1 && ALL.undoX == currentX))
+        {
+             System.out.println("chybaaaaaaaaaaaaaa");
+        }
+        else
+        {
+            MazeField pomocny = ALL.hraciePole.get(currentX, Integer.parseInt(stlpecZadanie.getText()));
+            ALL.hraciePole.shift(pomocny);
+            hraciaPlochaGUI1.vytvorGui();
+            volnaKartaGUI1.vytvorVolnuGui();
+            pokladyGUI1.vytvorPokladyGui();
+            volnyPokladGUI1.vytvorVolnuPGui();
+            hraciGUI1.vytvorHraciGui();
+            vlozVolnuKartu.setVisible(false);
+
+            ALL.undoX = Integer.parseInt(riadokZadanie.getText());
+            ALL.undoY = Integer.parseInt(stlpecZadanie.getText()); 
+            UNDObutton.setVisible(true);
+        }
         
-        ALL.undoX = Integer.parseInt(riadokZadanie.getText());
-        ALL.undoY = Integer.parseInt(stlpecZadanie.getText()); 
-        UNDObutton.setVisible(true);
+        
     }//GEN-LAST:event_vlozVolnuKartuMouseClicked
 
     private void pohybVlavoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohybVlavoActionPerformed
@@ -715,7 +743,8 @@ public class menuGui extends javax.swing.JFrame {
           if ((ALL.hraciePole.plocha[xPozH][yPozH].karta.left != CANGO.NULL) && (ALL.hraciePole.plocha[xPozH][yPozH-1].karta.right != CANGO.NULL) )
             {
             ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX = ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX - 1;
-            hraciGUI1.vytvorHraciGui();  
+            hraciGUI1.vytvorHraciGui(); 
+            UNDObutton.setVisible(false);
             }  
         }
         
@@ -734,7 +763,7 @@ public class menuGui extends javax.swing.JFrame {
             skore.setText(Integer.toString(ALL.poleHracov.poleHracov[ALL.hracNaTahu].ziskaneBody));
             pokladyGUI1.vytvorPokladyGui();
             hracovaKartaGUI1.vytvorHracKartGui();
-            
+            UNDObutton.setVisible(false);
             
             if(ALL.poleHracov.poleHracov[ALL.hracNaTahu].ziskaneBody == ALL.balicekKariet.maxSize/pocetHracovSlider.getValue())
             {
