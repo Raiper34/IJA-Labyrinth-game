@@ -19,4 +19,6 @@ public class ALL
     public static CardPack balicekKariet;
     public static int hracNaTahu = 1;
     public static int pocetUloh = 0;
+    public static int undoX;
+    public static int undoY;
 }
