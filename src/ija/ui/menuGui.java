@@ -6,6 +6,8 @@ import ija.homework2.board.MazeBoard;
 import ija.homework1.treasure.CardPack;
 import ija.homework1.treasure.TreasureCard;
 import ija.homework1.treasure.Treasure;
+import ija.homework2.board.MazeCard;
+import ija.homework2.board.MazeCard.CANGO;
 import ija.homework2.board.MazeField;
 
 /*
@@ -271,6 +273,11 @@ public class menuGui extends javax.swing.JFrame {
 
         pohybVlavo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pohybVlavo.setPreferredSize(new java.awt.Dimension(60, 60));
+        pohybVlavo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pohybVlavoActionPerformed(evt);
+            }
+        });
         hraPanel.add(pohybVlavo);
         pohybVlavo.setBounds(710, 320, 60, 60);
 
@@ -562,16 +569,50 @@ public class menuGui extends javax.swing.JFrame {
     }//GEN-LAST:event_potiahnutKartuActionPerformed
 
     private void pohybHoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohybHoreActionPerformed
-        // TODO add your handling code here:
+        int yPozH=ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX;
+        int xPozH=ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaY;
+        if(1 != xPozH)
+        {
+          if ((ALL.hraciePole.plocha[xPozH][yPozH].karta.up != CANGO.NULL) && (ALL.hraciePole.plocha[xPozH-1][yPozH].karta.down != CANGO.NULL) )
+            {
+            ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaY = ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaY - 1;
+            hraciGUI1.vytvorHraciGui();  
+            }  
+        }
+        
+        
+        
+        
     }//GEN-LAST:event_pohybHoreActionPerformed
 
     private void pohybVpravoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohybVpravoActionPerformed
+        int yPozH=ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX;
+        int xPozH=ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaY;
+        if(ALL.hraciePole.riadky != yPozH)
+        {
+          if ((ALL.hraciePole.plocha[xPozH][yPozH].karta.right != CANGO.NULL) && (ALL.hraciePole.plocha[xPozH][yPozH+1].karta.left != CANGO.NULL) )
+            {
+            ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX = ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX + 1;
+            hraciGUI1.vytvorHraciGui();  
+            }  
+        }
         
-        //ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX = ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX + 1;
+        
+        
     }//GEN-LAST:event_pohybVpravoActionPerformed
 
     private void pohybDoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohybDoleActionPerformed
-        // TODO add your handling code here:
+        int yPozH=ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX;
+        int xPozH=ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaY;
+        if(ALL.hraciePole.stlpce != xPozH)
+        {
+          if ((ALL.hraciePole.plocha[xPozH][yPozH].karta.down != CANGO.NULL) && (ALL.hraciePole.plocha[xPozH+1][yPozH].karta.up != CANGO.NULL) )
+            {
+            ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaY = ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaY + 1;
+            hraciGUI1.vytvorHraciGui();  
+            }  
+        }
+        
     }//GEN-LAST:event_pohybDoleActionPerformed
 
     private void riadokZadanieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_riadokZadanieActionPerformed
@@ -591,6 +632,22 @@ public class menuGui extends javax.swing.JFrame {
         pokladyGUI1.vytvorPokladyGui();
         volnyPokladGUI1.vytvorVolnuPGui();
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void pohybVlavoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohybVlavoActionPerformed
+        int yPozH=ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX;
+        int xPozH=ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaY;
+        if(1 != yPozH)
+        {
+          if ((ALL.hraciePole.plocha[xPozH][yPozH].karta.left != CANGO.NULL) && (ALL.hraciePole.plocha[xPozH][yPozH-1].karta.right != CANGO.NULL) )
+            {
+            ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX = ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX - 1;
+            hraciGUI1.vytvorHraciGui();  
+            }  
+        }
+        
+        
+       
+    }//GEN-LAST:event_pohybVlavoActionPerformed
 
     /**
      * @param args the command line arguments

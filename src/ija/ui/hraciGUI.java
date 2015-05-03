@@ -52,9 +52,9 @@ public class hraciGUI extends JPanel
         int h4x = ALL.poleHracov.poleHracov[4].poziciaX;
         int h4y = ALL.poleHracov.poleHracov[4].poziciaY;
        
-        for(int i = 1; i <= this.hraciaPlocha.riadky; i++)
+        for(int j = 1; j <= this.hraciaPlocha.riadky; j++)
         {
-            for(int j = 1; j <= this.hraciaPlocha.riadky; j++)
+            for(int i = 1; i <= this.hraciaPlocha.riadky; i++)
             {
                 
                 this.hraciGuiPanel[i][j] = new JPanel();
