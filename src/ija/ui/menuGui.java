@@ -63,6 +63,7 @@ public class menuGui extends javax.swing.JFrame {
         pohybVlavo = new javax.swing.JButton();
         pohybHore = new javax.swing.JButton();
         pokladyGUI1 = new ija.ui.pokladyGUI();
+        hraciGUI1 = new ija.ui.hraciGUI();
         hraciaPlochaGUI1 = new ija.ui.hraciaPlochaGUI();
         otocVpravo = new javax.swing.JButton();
         otocVlavo = new javax.swing.JButton();
@@ -279,6 +280,8 @@ public class menuGui extends javax.swing.JFrame {
         pohybHore.setBounds(770, 260, 60, 60);
         hraPanel.add(pokladyGUI1);
         pokladyGUI1.setBounds(40, 30, 610, 620);
+        hraPanel.add(hraciGUI1);
+        hraciGUI1.setBounds(40, 30, 610, 620);
         hraPanel.add(hraciaPlochaGUI1);
         hraciaPlochaGUI1.setBounds(40, 30, 610, 620);
         hraPanel.add(otocVpravo);
@@ -480,6 +483,7 @@ public class menuGui extends javax.swing.JFrame {
         hraciaPlochaGUI1.vytvorGui();
         volnaKartaGUI1.vytvorVolnuGui();
         pokladyGUI1.vytvorPokladyGui();
+        hraciGUI1.vytvorPokladyGui();
     }//GEN-LAST:event_StartActionPerformed
 
     private void pocetHracovSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_pocetHracovSliderStateChanged
@@ -621,6 +625,7 @@ public class menuGui extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton dalsiHrac;
     private javax.swing.JPanel hraPanel;
+    private ija.ui.hraciGUI hraciGUI1;
     private ija.ui.hraciaPlochaGUI hraciaPlochaGUI1;
     private javax.swing.JLabel infoKarta;
     private javax.swing.JLabel infoKarty;

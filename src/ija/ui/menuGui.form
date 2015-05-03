@@ -498,6 +498,17 @@
                 <Property name="useNullLayout" type="boolean" value="true"/>
               </Layout>
             </Container>
+            <Container class="ija.ui.hraciGUI" name="hraciGUI1">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="40" y="30" width="610" height="620"/>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                <Property name="useNullLayout" type="boolean" value="true"/>
+              </Layout>
+            </Container>
             <Component class="ija.ui.hraciaPlochaGUI" name="hraciaPlochaGUI1">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new ija.ui.hraciaPlochaGUI()"/>
