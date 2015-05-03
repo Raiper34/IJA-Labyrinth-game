@@ -76,7 +76,7 @@ public class menuGui extends javax.swing.JFrame {
         stlpecText = new javax.swing.JLabel();
         stlpecZadanie = new javax.swing.JTextField();
         riadokZadanie = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        vlozVolnuKartu = new javax.swing.JButton();
         kartaHraca = new javax.swing.JLabel();
         balicekKarty = new javax.swing.JLabel();
         UkoncitHru = new javax.swing.JButton();
@@ -356,14 +356,19 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.add(riadokZadanie);
         riadokZadanie.setBounds(940, 450, 60, 30);
 
-        jButton3.setText("VLOZIT VOLNY KAMEN");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        vlozVolnuKartu.setText("VLOZIT VOLNY KAMEN");
+        vlozVolnuKartu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                vlozVolnuKartuMouseClicked(evt);
             }
         });
-        hraPanel.add(jButton3);
-        jButton3.setBounds(680, 470, 170, 50);
+        vlozVolnuKartu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vlozVolnuKartuActionPerformed(evt);
+            }
+        });
+        hraPanel.add(vlozVolnuKartu);
+        vlozVolnuKartu.setBounds(680, 470, 170, 50);
 
         kartaHraca.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         kartaHraca.setForeground(new java.awt.Color(240, 240, 240));
@@ -591,6 +596,7 @@ public class menuGui extends javax.swing.JFrame {
         }
         hracovaKartaGUI1.vytvorHracKartGui();
         skore.setText(Integer.toString(ALL.poleHracov.poleHracov[ALL.hracNaTahu].ziskaneBody));
+        vlozVolnuKartu.setVisible(true);
         
         // + treba pridat podmienku 
         // ak nasledujuci hrac (s cislom hracTeraz) ma kartu tak sa nastavi
@@ -673,7 +679,7 @@ public class menuGui extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_otocVlavoActionPerformed
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    private void vlozVolnuKartuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vlozVolnuKartuMouseClicked
         // TODO add your handling code here: Integer.parseInt(3)
         MazeField pomocny = ALL.hraciePole.get(Integer.parseInt(riadokZadanie.getText()), Integer.parseInt(stlpecZadanie.getText()));
 	ALL.hraciePole.shift(pomocny);
@@ -682,7 +688,8 @@ public class menuGui extends javax.swing.JFrame {
         pokladyGUI1.vytvorPokladyGui();
         volnyPokladGUI1.vytvorVolnuPGui();
         hraciGUI1.vytvorHraciGui();
-    }//GEN-LAST:event_jButton3MouseClicked
+        vlozVolnuKartu.setVisible(false);
+    }//GEN-LAST:event_vlozVolnuKartuMouseClicked
 
     private void pohybVlavoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohybVlavoActionPerformed
         int yPozH=ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX;
@@ -703,7 +710,7 @@ public class menuGui extends javax.swing.JFrame {
     private void zoberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoberActionPerformed
         int yPozH=ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX;
         int xPozH=ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaY;
-        if(ALL.hraciePole.plocha[xPozH][yPozH].karta.uloha == ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha)
+        if((ALL.hraciePole.plocha[xPozH][yPozH].karta.uloha == ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha) && (ALL.hraciePole.plocha[xPozH][yPozH].karta.uloha != -1))
         {
             ALL.hraciePole.plocha[xPozH][yPozH].karta.uloha = -1;
             ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha = -1;
@@ -742,6 +749,10 @@ public class menuGui extends javax.swing.JFrame {
         ParentPanel.repaint();
         ParentPanel.revalidate();
     }//GEN-LAST:event_toMenuActionPerformed
+
+    private void vlozVolnuKartuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vlozVolnuKartuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vlozVolnuKartuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -800,7 +811,6 @@ public class menuGui extends javax.swing.JFrame {
     private javax.swing.JLabel infoScore;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel kartaHraca;
@@ -833,6 +843,7 @@ public class menuGui extends javax.swing.JFrame {
     private javax.swing.JLabel velkostPola1;
     private javax.swing.JSlider velkostPolaSlider;
     private javax.swing.JTextField velkostPolaText;
+    private javax.swing.JButton vlozVolnuKartu;
     private ija.ui.volnaKartaGUI volnaKartaGUI1;
     private ija.ui.volnyPokladGUI volnyPokladGUI1;
     private javax.swing.JLabel vyherca;
