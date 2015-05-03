@@ -485,7 +485,7 @@ public class menuGui extends javax.swing.JFrame {
         hraciaPlochaGUI1.vytvorGui();
         volnaKartaGUI1.vytvorVolnuGui();
         pokladyGUI1.vytvorPokladyGui();
-        hraciGUI1.vytvorPokladyGui();
+        hraciGUI1.vytvorHraciGui();
         
     }//GEN-LAST:event_StartActionPerformed
 
