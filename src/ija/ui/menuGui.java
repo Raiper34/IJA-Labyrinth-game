@@ -681,6 +681,7 @@ public class menuGui extends javax.swing.JFrame {
         volnaKartaGUI1.vytvorVolnuGui();
         pokladyGUI1.vytvorPokladyGui();
         volnyPokladGUI1.vytvorVolnuPGui();
+        hraciGUI1.vytvorHraciGui();
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void pohybVlavoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohybVlavoActionPerformed
