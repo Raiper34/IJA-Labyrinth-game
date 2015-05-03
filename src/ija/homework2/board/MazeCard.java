@@ -13,6 +13,8 @@ public class MazeCard
 	public CANGO up;
 	public CANGO right;
 	public CANGO down;
+        
+        public int uloha;
 	
 	/**
 	 * 
@@ -28,6 +30,7 @@ public class MazeCard
 		this.up = up;
 		this.right = right;
 		this.down = down;
+                this.uloha = -1;
 	}
 
 	/**

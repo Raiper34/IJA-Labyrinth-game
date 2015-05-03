@@ -18,4 +18,5 @@ public class ALL
     public static hraci poleHracov;
     public static CardPack balicekKariet;
     public static int hracNaTahu = 1;
+    public static int pocetUloh = 0;
 }

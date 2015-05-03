@@ -1,5 +1,6 @@
 package ija.homework2.board;
 
+import ija.elements.ALL;
 import java.util.Random;
 
 /**
@@ -148,6 +149,15 @@ public class MazeBoard
                                 }
 			}
 		}
+                //naplnenie ulohovymi kartami
+                for(int i = 1; i <= this.riadky; i++) //idem po riadkoch
+		{
+			for(int j = 1; j <= this.stlpce; j++) //idem po stlpcoch
+			{
+                            this.plocha[i][j].karta.uloha = 1;
+                            
+                        }
+                }
 		this.volnaKarta = MazeCard.create(random()); //vytvorim volnu kartu
 	}
         

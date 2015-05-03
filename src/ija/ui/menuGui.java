@@ -465,6 +465,7 @@ public class menuGui extends javax.swing.JFrame {
             CardPack novybalicek = new CardPack(12,12);
             ALL.balicekKariet = novybalicek;
             balicekKarty.setText(Integer.toString(novybalicek.size()));
+            ALL.pocetUloh = 12;
         }
         else
         {
@@ -472,6 +473,7 @@ public class menuGui extends javax.swing.JFrame {
             CardPack novybalicek = new CardPack(24,24);
             ALL.balicekKariet = novybalicek;
             balicekKarty.setText(Integer.toString(novybalicek.size()));
+            ALL.pocetUloh = 24;
         }
         ALL.balicekKariet.shuffle();
         //hraciaPlochaGUI1.removeAll();
