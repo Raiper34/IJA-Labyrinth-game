@@ -1,6 +1,7 @@
 package ija.homework2.board;
 
 import ija.elements.ALL;
+import ija.homework1.treasure.CardPack;
 import java.util.Random;
 
 /**
@@ -150,14 +151,32 @@ public class MazeBoard
 			}
 		}
                 //naplnenie ulohovymi kartami
-                for(int i = 1; i <= this.riadky; i++) //idem po riadkoch
+                CardPack balicekNaPolicka = new CardPack(ALL.pocetUloh,ALL.pocetUloh);
+                balicekNaPolicka.shuffle();
+                while(balicekNaPolicka.size() != 0) 
+                {
+                    int hodnota = balicekNaPolicka.popCard().getCard().getCode();
+                    Random nahoda = new Random();
+                    int umiestneny = 0;
+                    while(umiestneny == 0)
+                    {
+                       int nahodnyX = nahoda.nextInt(ALL.hraciePole.riadky) + 1;
+                       int nahodnyY = nahoda.nextInt(ALL.hraciePole.riadky) + 1;
+                       if(this.plocha[nahodnyX][nahodnyY].karta.uloha == -1)
+                       {
+                           this.plocha[nahodnyX][nahodnyY].karta.uloha = hodnota;
+                           umiestneny = 1;
+                       }
+                    }
+                }
+                /*for(int i = 1; i <= this.riadky; i++) //idem po riadkoch
 		{
 			for(int j = 1; j <= this.stlpce; j++) //idem po stlpcoch
 			{
                             this.plocha[i][j].karta.uloha = 1;
                             
                         }
-                }
+                }*/
 		this.volnaKarta = MazeCard.create(random()); //vytvorim volnu kartu
 	}
         
