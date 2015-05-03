@@ -64,6 +64,7 @@ public class menuGui extends javax.swing.JFrame {
         volnaKartaGUI1 = new ija.ui.volnaKartaGUI();
         pohybVpravo = new javax.swing.JButton();
         hracovaKartaGUI1 = new ija.ui.hracovaKartaGUI();
+        zober = new javax.swing.JButton();
         pohybVlavo = new javax.swing.JButton();
         pohybHore = new javax.swing.JButton();
         hraciGUI1 = new ija.ui.hraciGUI();
@@ -270,6 +271,16 @@ public class menuGui extends javax.swing.JFrame {
         pohybVpravo.setBounds(830, 320, 60, 60);
         hraPanel.add(hracovaKartaGUI1);
         hracovaKartaGUI1.setBounds(910, 150, 80, 80);
+
+        zober.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        zober.setPreferredSize(new java.awt.Dimension(60, 60));
+        zober.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zoberActionPerformed(evt);
+            }
+        });
+        hraPanel.add(zober);
+        zober.setBounds(770, 320, 60, 60);
 
         pohybVlavo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pohybVlavo.setPreferredSize(new java.awt.Dimension(60, 60));
@@ -649,6 +660,10 @@ public class menuGui extends javax.swing.JFrame {
        
     }//GEN-LAST:event_pohybVlavoActionPerformed
 
+    private void zoberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_zoberActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -739,5 +754,6 @@ public class menuGui extends javax.swing.JFrame {
     private javax.swing.JTextField velkostPolaText;
     private ija.ui.volnaKartaGUI volnaKartaGUI1;
     private ija.ui.volnyPokladGUI volnyPokladGUI1;
+    private javax.swing.JButton zober;
     // End of variables declaration//GEN-END:variables
 }
