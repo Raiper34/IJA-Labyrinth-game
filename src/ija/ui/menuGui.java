@@ -573,6 +573,8 @@ public class menuGui extends javax.swing.JFrame {
         hraciGUI1.vytvorHraciGui();
         volnyPokladGUI1.vytvorVolnuPGui();
         UNDObutton.setVisible(false);
+        ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha = -1;
+        
         
     }//GEN-LAST:event_StartActionPerformed
 
