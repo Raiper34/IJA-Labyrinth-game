@@ -308,9 +308,20 @@ public class menuGui extends javax.swing.JFrame {
         pokladyGUI1.setBounds(40, 30, 610, 620);
         hraPanel.add(hraciaPlochaGUI1);
         hraciaPlochaGUI1.setBounds(40, 30, 610, 620);
+
+        otocVpravo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                otocVpravoMouseClicked(evt);
+            }
+        });
         hraPanel.add(otocVpravo);
         otocVpravo.setBounds(790, 690, 60, 50);
 
+        otocVlavo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                otocVlavoMouseClicked(evt);
+            }
+        });
         otocVlavo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 otocVlavoActionPerformed(evt);
@@ -663,6 +674,16 @@ public class menuGui extends javax.swing.JFrame {
     private void zoberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zoberActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_zoberActionPerformed
+
+    private void otocVpravoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_otocVpravoMouseClicked
+        ALL.hraciePole.volnaKarta.turnRight();
+        volnaKartaGUI1.vytvorVolnuGui();
+    }//GEN-LAST:event_otocVpravoMouseClicked
+
+    private void otocVlavoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_otocVlavoMouseClicked
+        ALL.hraciePole.volnaKarta.turnLeft();
+        volnaKartaGUI1.vytvorVolnuGui();
+    }//GEN-LAST:event_otocVlavoMouseClicked
 
     /**
      * @param args the command line arguments

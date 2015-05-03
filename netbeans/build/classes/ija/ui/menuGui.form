@@ -561,6 +561,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JButton" name="otocVpravo">
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="otocVpravoMouseClicked"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="790" y="690" width="60" height="50"/>
@@ -569,6 +572,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="otocVlavo">
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="otocVlavoMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="otocVlavoActionPerformed"/>
               </Events>
               <Constraints>
