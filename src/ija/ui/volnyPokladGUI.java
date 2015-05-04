@@ -32,7 +32,7 @@ public class volnyPokladGUI extends JPanel
         if(ALL.hraciePole.volnaKarta.uloha != -1)
         {
             try {
-                BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/" + Integer.toString(ALL.hraciePole.volnaKarta.uloha) + ".png"));
+                BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/poklady/" + Integer.toString(ALL.hraciePole.volnaKarta.uloha) + ".png"));
                 Image dimg = obrazok.getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH);
                 add(new JLabel(new ImageIcon(dimg)));
             } catch (IOException ex) {

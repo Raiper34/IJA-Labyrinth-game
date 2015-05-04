@@ -84,7 +84,7 @@ public class hraciaPlochaGUI extends JPanel
                 System.out.println(meno);
                 this.polickaGui[i][j] = new JPanel();
                 try {
-                    BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/" + meno +".png"));
+                    BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/cesty/" + meno + ".png"));
                     Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                     this.polickaGui[i][j].add(new JLabel(new ImageIcon(dimg)));
                 } catch (IOException ex) {

@@ -64,7 +64,7 @@ public class hraciGUI extends JPanel
                 {
                     try 
                     {
-                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/obrazky_hraci/1234.png"));
+                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/hraci/1234.png"));
                         Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                         this.hraciGuiPanel[i][j].add(new JLabel(new ImageIcon(dimg)));
                     } catch (IOException ex) {
@@ -77,7 +77,7 @@ public class hraciGUI extends JPanel
                 {
                    try 
                     {
-                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/obrazky_hraci/234.png"));
+                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/hraci/234.png"));
                         Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                         this.hraciGuiPanel[i][j].add(new JLabel(new ImageIcon(dimg)));
                     } catch (IOException ex) {
@@ -90,7 +90,7 @@ public class hraciGUI extends JPanel
                 {
                    try 
                     {
-                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/obrazky_hraci/134.png"));
+                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/hraci/134.png"));
                         Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                         this.hraciGuiPanel[i][j].add(new JLabel(new ImageIcon(dimg)));
                     } catch (IOException ex) {
@@ -103,7 +103,7 @@ public class hraciGUI extends JPanel
                 {
                    try 
                     {
-                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/obrazky_hraci/124.png"));
+                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/hraci/124.png"));
                         Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                         this.hraciGuiPanel[i][j].add(new JLabel(new ImageIcon(dimg)));
                     } catch (IOException ex) {
@@ -117,7 +117,7 @@ public class hraciGUI extends JPanel
                 {
                    try 
                     {
-                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/obrazky_hraci/123.png"));
+                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/hraci/123.png"));
                         Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                         this.hraciGuiPanel[i][j].add(new JLabel(new ImageIcon(dimg)));
                     } catch (IOException ex) {
@@ -130,7 +130,7 @@ public class hraciGUI extends JPanel
                 {
                    try 
                     {
-                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/obrazky_hraci/34.png"));
+                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/hraci/34.png"));
                         Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                         this.hraciGuiPanel[i][j].add(new JLabel(new ImageIcon(dimg)));
                     } catch (IOException ex) {
@@ -143,7 +143,7 @@ public class hraciGUI extends JPanel
                 {
                    try 
                     {
-                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/obrazky_hraci/24.png"));
+                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/hraci/24.png"));
                         Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                         this.hraciGuiPanel[i][j].add(new JLabel(new ImageIcon(dimg)));
                     } catch (IOException ex) {
@@ -156,7 +156,7 @@ public class hraciGUI extends JPanel
                 {
                    try 
                     {
-                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/obrazky_hraci/23.png"));
+                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/hraci/23.png"));
                         Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                         this.hraciGuiPanel[i][j].add(new JLabel(new ImageIcon(dimg)));
                     } catch (IOException ex) {
@@ -169,7 +169,7 @@ public class hraciGUI extends JPanel
                 {
                    try 
                     {
-                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/obrazky_hraci/14.png"));
+                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/hraci/14.png"));
                         Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                         this.hraciGuiPanel[i][j].add(new JLabel(new ImageIcon(dimg)));
                     } catch (IOException ex) {
@@ -183,7 +183,7 @@ public class hraciGUI extends JPanel
                 {
                    try 
                     {
-                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/obrazky_hraci/13.png"));
+                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/hraci/13.png"));
                         Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                         this.hraciGuiPanel[i][j].add(new JLabel(new ImageIcon(dimg)));
                     } catch (IOException ex) {
@@ -196,7 +196,7 @@ public class hraciGUI extends JPanel
                 {
                    try 
                     {
-                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/obrazky_hraci/12.png"));
+                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/hraci/12.png"));
                         Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                         this.hraciGuiPanel[i][j].add(new JLabel(new ImageIcon(dimg)));
                     } catch (IOException ex) {
@@ -209,7 +209,7 @@ public class hraciGUI extends JPanel
                 {
                    try 
                     {
-                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/obrazky_hraci/4.png"));
+                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/hraci/4.png"));
                         Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                         this.hraciGuiPanel[i][j].add(new JLabel(new ImageIcon(dimg)));
                     } catch (IOException ex) {
@@ -222,7 +222,7 @@ public class hraciGUI extends JPanel
                 {
                    try 
                     {
-                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/obrazky_hraci/3.png"));
+                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/hraci/3.png"));
                         Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                         this.hraciGuiPanel[i][j].add(new JLabel(new ImageIcon(dimg)));
                     } catch (IOException ex) {
@@ -235,7 +235,7 @@ public class hraciGUI extends JPanel
                 {
                    try 
                     {
-                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/obrazky_hraci/2.png"));
+                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/hraci/2.png"));
                         Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                         this.hraciGuiPanel[i][j].add(new JLabel(new ImageIcon(dimg)));
                     } catch (IOException ex) {
@@ -248,7 +248,7 @@ public class hraciGUI extends JPanel
                 {
                    try 
                     {
-                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/obrazky_hraci/1.png"));
+                        BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/hraci/1.png"));
                         Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
                         this.hraciGuiPanel[i][j].add(new JLabel(new ImageIcon(dimg)));
                     } catch (IOException ex) {

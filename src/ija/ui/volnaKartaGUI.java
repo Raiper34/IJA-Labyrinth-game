@@ -67,7 +67,7 @@ public class volnaKartaGUI extends JPanel
         }
         String meno = Integer.toString(menoU) + Integer.toString(menoR) + Integer.toString(menoD) + Integer.toString(menoL);
         try {
-            BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/" + meno + ".png"));
+            BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/cesty/" + meno + ".png"));
             Image dimg = obrazok.getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH);
             add(new JLabel(new ImageIcon(dimg)));
         } catch (IOException ex) {
