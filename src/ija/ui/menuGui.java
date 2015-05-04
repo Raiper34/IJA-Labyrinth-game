@@ -592,6 +592,7 @@ public class menuGui extends javax.swing.JFrame {
         hraciGUI1.vytvorHraciGui();
         volnyPokladGUI1.vytvorVolnuPGui();
         UNDObutton.setVisible(false);
+        ALL.undoVisible = 0;
         ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha = -1;
         
         
@@ -638,7 +639,9 @@ public class menuGui extends javax.swing.JFrame {
         hracovaKartaGUI1.vytvorHracKartGui();
         skore.setText(Integer.toString(ALL.poleHracov.poleHracov[ALL.hracNaTahu].ziskaneBody));
         vlozVolnuKartu.setVisible(true);
+        ALL.vlozKamenVisible = 1;
         UNDObutton.setVisible(false);
+        ALL.undoVisible = 0;
         
         // + treba pridat podmienku 
         // ak nasledujuci hrac (s cislom hracTeraz) ma kartu tak sa nastavi
@@ -665,6 +668,7 @@ public class menuGui extends javax.swing.JFrame {
         }
         hracovaKartaGUI1.vytvorHracKartGui();
         UNDObutton.setVisible(false);
+        ALL.undoVisible = 0;
     }//GEN-LAST:event_potiahnutKartuActionPerformed
 
     private void pohybHoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohybHoreActionPerformed
@@ -677,6 +681,7 @@ public class menuGui extends javax.swing.JFrame {
             ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaY = ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaY - 1;
             hraciGUI1.vytvorHraciGui(); 
             UNDObutton.setVisible(false);
+            ALL.undoVisible = 0;
             }  
         }
         
@@ -695,6 +700,7 @@ public class menuGui extends javax.swing.JFrame {
             ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX = ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX + 1;
             hraciGUI1.vytvorHraciGui(); 
             UNDObutton.setVisible(false);
+            ALL.undoVisible = 0;
             }  
         }
         
@@ -712,6 +718,7 @@ public class menuGui extends javax.swing.JFrame {
             ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaY = ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaY + 1;
             hraciGUI1.vytvorHraciGui(); 
             UNDObutton.setVisible(false);
+            ALL.undoVisible = 0;
             }  
         }
         
@@ -748,10 +755,13 @@ public class menuGui extends javax.swing.JFrame {
             volnyPokladGUI1.vytvorVolnuPGui();
             hraciGUI1.vytvorHraciGui();
             vlozVolnuKartu.setVisible(false);
+            ALL.vlozKamenVisible = 0;
+            
 
             ALL.undoX = Integer.parseInt(riadokZadanie.getText());
             ALL.undoY = Integer.parseInt(stlpecZadanie.getText()); 
             UNDObutton.setVisible(true);
+            ALL.undoVisible = 1;
         }
         
         
@@ -767,6 +777,7 @@ public class menuGui extends javax.swing.JFrame {
             ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX = ALL.poleHracov.poleHracov[ALL.hracNaTahu].poziciaX - 1;
             hraciGUI1.vytvorHraciGui(); 
             UNDObutton.setVisible(false);
+            ALL.undoVisible = 0;
             }  
         }
         
@@ -786,6 +797,7 @@ public class menuGui extends javax.swing.JFrame {
             pokladyGUI1.vytvorPokladyGui();
             hracovaKartaGUI1.vytvorHracKartGui();
             UNDObutton.setVisible(false);
+            ALL.undoVisible = 0;
             
             if(ALL.poleHracov.poleHracov[ALL.hracNaTahu].ziskaneBody == ALL.balicekKariet.maxSize/ALL.PocetHracovCelkovo)
             {
@@ -849,7 +861,9 @@ public class menuGui extends javax.swing.JFrame {
         volnyPokladGUI1.vytvorVolnuPGui();
         hraciGUI1.vytvorHraciGui();
         vlozVolnuKartu.setVisible(true);
+        ALL.vlozKamenVisible = 1;
         UNDObutton.setVisible(false);
+        ALL.undoVisible = 0;
     }//GEN-LAST:event_UNDObuttonActionPerformed
 
     private void ulozitHruMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ulozitHruMouseClicked
@@ -886,6 +900,24 @@ public class menuGui extends javax.swing.JFrame {
           pokladyGUI1.vytvorPokladyGui();
           hraciGUI1.vytvorHraciGui();
           volnyPokladGUI1.vytvorVolnuPGui();
+          hracovaKartaGUI1.vytvorHracKartGui();
+          
+          // nastavenia iformacnych textov
+          tah.setText(Integer.toString(ALL.hracNaTahu));
+          skore.setText(Integer.toString(ALL.poleHracov.poleHracov[ALL.hracNaTahu].ziskaneBody));
+          balicekKarty.setText(Integer.toString(ALL.balicekKariet.actSize));
+          PocetHracoShow.setText("POCET HRACOV JE -> "+Integer.toString(ALL.poleHracov.pocetHracov));
+          
+          if (ALL.undoVisible == 0 )
+          {
+              UNDObutton.setVisible(false);
+              
+          }
+          if (ALL.vlozKamenVisible == 0)
+          {
+              vlozVolnuKartu.setVisible(false);
+          }
+          
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

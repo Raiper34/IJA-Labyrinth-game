@@ -7,7 +7,7 @@ import ija.homework2.board.MazeBoard;
  * Created by raiper34 on 28.4.15.
  */
 public class hraci {
-    int pocetHracov;
+    public int pocetHracov;
     public hrac poleHracov[];
     int pocetRiadkov;
     int pocetStlpcov;

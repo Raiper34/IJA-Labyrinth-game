@@ -20,13 +20,16 @@ public class SAVE
     public void ulozitHru(File subor) throws FileNotFoundException, UnsupportedEncodingException
     {
         try (PrintWriter writer = new PrintWriter(subor, "UTF-8")) {
-            //writer.println(ALL.hracNaTahu);
-            //writer.println(ALL.hracNaTahu);
-            writer.println(ALL.hracNaTahu); //1
-            writer.println(ALL.pocetUloh); //2
-            writer.println(ALL.hraciePole.riadky); //3
-            writer.println(ALL.poleHracov.pocetHracov); //4
-            writer.println(ALL.balicekKariet.size()); //5
+            
+            writer.println(ALL.undoX);//1
+            writer.println(ALL.undoY);//2
+            writer.println(ALL.hracNaTahu); //3
+            writer.println(ALL.pocetUloh); //4
+            writer.println(ALL.hraciePole.riadky); //5
+            writer.println(ALL.poleHracov.pocetHracov); //6
+            writer.println(ALL.balicekKariet.size()); //7
+            writer.println(ALL.undoVisible); //8
+            writer.println(ALL.vlozKamenVisible); //9
             
             
             if(ALL.hraciePole.volnaKarta.left == CANGO.NULL)

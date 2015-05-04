@@ -20,6 +20,7 @@ import java.nio.charset.Charset;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 /**
  *
  * @author user
@@ -46,13 +47,18 @@ public class LOAD
             //} catch (IOException ex) {
             //    Logger.getLogger(LOAD.class.getName()).log(Level.SEVERE, null, ex);
             //}
+            ALL.undoX=Integer.parseInt(br.readLine());//1
+            ALL.undoY=Integer.parseInt(br.readLine());//2
+            ALL.hracNaTahu=Integer.parseInt(br.readLine()); //3
             
-            ALL.hracNaTahu=Integer.parseInt(br.readLine()); //1
-            ALL.pocetUloh=Integer.parseInt(br.readLine()); //2
-            int riadky=Integer.parseInt(br.readLine()); //3 
-            int pocethracov=Integer.parseInt(br.readLine()); //4
-            int VelkostBalicka = Integer.parseInt(br.readLine()); //5
-            ALL.PocetHracovCelkovo = pocethracov;
+            ALL.pocetUloh=Integer.parseInt(br.readLine()); //4
+            int riadky=Integer.parseInt(br.readLine()); //5 
+            int pocethracov=Integer.parseInt(br.readLine()); //6
+            int VelkostBalicka = Integer.parseInt(br.readLine()); //7
+            ALL.undoVisible = Integer.parseInt(br.readLine()); //8
+            ALL.vlozKamenVisible = Integer.parseInt(br.readLine()); //9
+            ALL.PocetHracovCelkovo = pocethracov; 
+            
             
             CardPack novybalicek = new CardPack(ALL.pocetUloh,ALL.pocetUloh);
             ALL.balicekKariet = novybalicek;
