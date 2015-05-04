@@ -11,7 +11,7 @@ public class CardPack
 	public int maxSize; //maximum kariet pre dany balicek
 	int actSize; //aktualny poct kariet v balicku
 	
-	TreasureCard[] balicek; //pole kariet = balicek
+	public TreasureCard[] balicek; //pole kariet = balicek
 	
 	/**
 	 * Inicializuje balicek a naplni ho kartami

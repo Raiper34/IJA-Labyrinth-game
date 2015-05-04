@@ -108,6 +108,11 @@ public class SAVE
                 }
             }
             
+            //writer.println("Karty");
+            for(int i = 0; i < ALL.pocetUloh; i++)
+            {
+                writer.println(ALL.balicekKariet.balicek[i].getCard().getCode());
+            }
             
         }
     }

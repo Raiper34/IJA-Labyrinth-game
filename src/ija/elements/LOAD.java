@@ -149,6 +149,11 @@ public class LOAD
                 }
             }
             
+            for(int i = 0; i < ALL.pocetUloh; i++)
+            {
+               ALL.balicekKariet.balicek[i].karta.code = Integer.parseInt(br.readLine());
+            }
+            
             
             
             

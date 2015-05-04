@@ -6,7 +6,7 @@ package ija.homework1.treasure;
  */
 public class TreasureCard
 {
-	Treasure karta; //hracia karta
+	public Treasure karta; //hracia karta
 	
 	/**
 	 * Inicializcia karty 

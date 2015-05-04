@@ -6,7 +6,7 @@ package ija.homework1.treasure;
  */
 public class Treasure 
 {
-	int code; // kod ktorym je poklad identifikovany
+	public int code; // kod ktorym je poklad identifikovany
 	static Treasure[] setPokladov = new Treasure[24]; //set viacerych pokladov
 
 	/**
