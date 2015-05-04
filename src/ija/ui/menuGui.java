@@ -498,7 +498,7 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.add(skore);
         skore.setBounds(380, 690, 40, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/example.JPG"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/example.JPG"))); // NOI18N
         hraPanel.add(jLabel1);
         jLabel1.setBounds(50, 40, 600, 600);
 
