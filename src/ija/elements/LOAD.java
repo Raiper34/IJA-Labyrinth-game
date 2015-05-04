@@ -5,6 +5,8 @@
  */
 package ija.elements;
 
+import ija.homework1.treasure.CardPack;
+import ija.homework2.board.MazeBoard;
 import ija.homework2.board.MazeCard;
 import ija.homework2.board.MazeCard.CANGO;
 import java.io.BufferedReader;
@@ -47,9 +49,24 @@ public class LOAD
             
             ALL.hracNaTahu=Integer.parseInt(br.readLine());
             ALL.pocetUloh=Integer.parseInt(br.readLine());
-            int RIADKY=Integer.parseInt(br.readLine());
-            int POCETHRACOV=Integer.parseInt(br.readLine());
+            int riadky=Integer.parseInt(br.readLine());
+            int pocethracov=Integer.parseInt(br.readLine());
             ALL.MaxVelkostBalicku=Integer.parseInt(br.readLine());
+            
+            
+            
+            CardPack novybalicek = new CardPack(ALL.pocetUloh,ALL.pocetUloh);
+            ALL.balicekKariet = novybalicek;
+            
+            MazeBoard hraciaPlocha = MazeBoard.createMazeBoard(riadky);
+            ALL.hraciePole = hraciaPlocha;
+            hraciaPlocha.newGame();
+            
+            hraci zoznamHracov = hraci.vytvorHracov(pocethracov, riadky, riadky);
+            ALL.poleHracov = zoznamHracov;
+            
+            
+            
             if(Integer.parseInt(br.readLine())== 1)
             {
                 ALL.hraciePole.volnaKarta.left = CANGO.LEFT;

@@ -877,6 +877,10 @@ public class menuGui extends javax.swing.JFrame {
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(menuGui.class.getName()).log(Level.SEVERE, null, ex);
             }
+          ParentPanel.removeAll();
+          ParentPanel.add(hraPanel);
+          ParentPanel.repaint();
+          ParentPanel.revalidate();
           hraciaPlochaGUI1.vytvorGui();
           volnaKartaGUI1.vytvorVolnuGui();
           pokladyGUI1.vytvorPokladyGui();
