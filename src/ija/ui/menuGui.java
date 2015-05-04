@@ -562,7 +562,8 @@ public class menuGui extends javax.swing.JFrame {
         ParentPanel.add(hraPanel);
         ParentPanel.repaint();
         ParentPanel.revalidate();
-        PocetHracoShow.setText("POCET HRACOV JE -> "+Integer.toString(pocetHracovSlider.getValue()));
+        ALL.MaxVelkostBalicku = pocetHracovSlider.getValue();
+        PocetHracoShow.setText("POCET HRACOV JE -> "+Integer.toString(ALL.MaxVelkostBalicku));
         if(tlacitko12.isSelected())
         {
             CardPack novybalicek = new CardPack(12,12);
@@ -583,7 +584,7 @@ public class menuGui extends javax.swing.JFrame {
         MazeBoard hraciaPlocha = MazeBoard.createMazeBoard(velkostPolaSlider.getValue());
         ALL.hraciePole = hraciaPlocha;
         hraciaPlocha.newGame();
-        hraci zoznamHracov = hraci.vytvorHracov(pocetHracovSlider.getValue(),velkostPolaSlider.getValue(),velkostPolaSlider.getValue());
+        hraci zoznamHracov = hraci.vytvorHracov(ALL.MaxVelkostBalicku,velkostPolaSlider.getValue(),velkostPolaSlider.getValue());
         ALL.poleHracov = zoznamHracov;
         hraciaPlochaGUI1.vytvorGui();
         volnaKartaGUI1.vytvorVolnuGui();
@@ -592,6 +593,7 @@ public class menuGui extends javax.swing.JFrame {
         volnyPokladGUI1.vytvorVolnuPGui();
         UNDObutton.setVisible(false);
         ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha = -1;
+        
         
         
     }//GEN-LAST:event_StartActionPerformed
@@ -614,7 +616,7 @@ public class menuGui extends javax.swing.JFrame {
     private void dalsiHracActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dalsiHracActionPerformed
         ALL.hracNaTahu = ALL.hracNaTahu + 1;
         
-        if(pocetHracovSlider.getValue() >= ALL.hracNaTahu)
+        if(ALL.MaxVelkostBalicku >= ALL.hracNaTahu)
         {
            tah.setText(Integer.toString(ALL.hracNaTahu));
            
@@ -785,7 +787,7 @@ public class menuGui extends javax.swing.JFrame {
             hracovaKartaGUI1.vytvorHracKartGui();
             UNDObutton.setVisible(false);
             
-            if(ALL.poleHracov.poleHracov[ALL.hracNaTahu].ziskaneBody == ALL.balicekKariet.maxSize/pocetHracovSlider.getValue())
+            if(ALL.poleHracov.poleHracov[ALL.hracNaTahu].ziskaneBody == ALL.balicekKariet.maxSize/ALL.MaxVelkostBalicku)
             {
                 ParentPanel.removeAll();
                 ParentPanel.add(VyhraPanel);
