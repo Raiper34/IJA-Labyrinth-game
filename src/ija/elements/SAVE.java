@@ -67,6 +67,48 @@ public class SAVE
                 writer.println(ALL.poleHracov.poleHracov[i].uloha);
                 writer.println(ALL.poleHracov.poleHracov[i].ziskaneBody);
             }
+            
+            for(int i = 1; i <= ALL.hraciePole.riadky; i++)
+            {
+                for(int j = 1; j <= ALL.hraciePole.riadky; j++)
+                {
+                    if(ALL.hraciePole.plocha[i][j].karta.left == CANGO.NULL)
+                    {
+                        writer.println(0);
+                    }
+                    else
+                    {
+                        writer.println(1);
+                    }
+                    if(ALL.hraciePole.plocha[i][j].karta.up == CANGO.NULL)
+                    {
+                        writer.println(0);
+                    }
+                    else
+                    {
+                        writer.println(1);
+                    }
+                    if(ALL.hraciePole.plocha[i][j].karta.right == CANGO.NULL)
+                    {
+                        writer.println(0);
+                    }
+                    else
+                    {
+                        writer.println(1);
+                    }
+                    if(ALL.hraciePole.plocha[i][j].karta.down == CANGO.NULL)
+                    {
+                        writer.println(0);
+                    }
+                    else
+                    {
+                        writer.println(1);
+                    }
+                    writer.println(ALL.hraciePole.plocha[i][j].karta.uloha);
+                }
+            }
+            
+            
         }
     }
 }

@@ -109,6 +109,46 @@ public class LOAD
                 ALL.poleHracov.poleHracov[i].ziskaneBody = Integer.parseInt(br.readLine());
             }
             
+            for(int i = 1; i <= ALL.hraciePole.riadky; i++)
+            {
+                for(int j = 1; j <= ALL.hraciePole.riadky; j++)
+                {
+                    if(Integer.parseInt(br.readLine())== 1)
+                    {
+                        ALL.hraciePole.plocha[i][j].karta.left = CANGO.LEFT;
+                    }
+                    else
+                    {
+                       ALL.hraciePole.plocha[i][j].karta.left = CANGO.NULL; 
+                    }
+                    if(Integer.parseInt(br.readLine())== 1)
+                    {
+                        ALL.hraciePole.plocha[i][j].karta.up = CANGO.UP;
+                    }
+                    else
+                    {
+                       ALL.hraciePole.plocha[i][j].karta.up = CANGO.NULL; 
+                    }
+                    if(Integer.parseInt(br.readLine())== 1)
+                    {
+                        ALL.hraciePole.plocha[i][j].karta.right = CANGO.RIGHT;
+                    }
+                    else
+                    {
+                       ALL.hraciePole.plocha[i][j].karta.right = CANGO.NULL; 
+                    }
+                    if(Integer.parseInt(br.readLine())== 1)
+                    {
+                        ALL.hraciePole.plocha[i][j].karta.down = CANGO.DOWN;
+                    }
+                    else
+                    {
+                       ALL.hraciePole.plocha[i][j].karta.down = CANGO.NULL; 
+                    }
+                    ALL.hraciePole.plocha[i][j].karta.uloha = Integer.parseInt(br.readLine());
+                }
+            }
+            
             
             
             
