@@ -157,7 +157,7 @@ public class menuGui extends javax.swing.JFrame {
         MenuPanel.add(jButton4);
         jButton4.setBounds(370, 530, 260, 90);
 
-        pozadieMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/black.jpg"))); // NOI18N
+        pozadieMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/black.jpg"))); // NOI18N
         MenuPanel.add(pozadieMenu);
         pozadieMenu.setBounds(0, 0, 1024, 768);
 
@@ -253,7 +253,7 @@ public class menuGui extends javax.swing.JFrame {
         NastaveniaPanel.add(tlacitko24);
         tlacitko24.setBounds(610, 490, 60, 40);
 
-        pozadieNastavenia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/black2.jpg"))); // NOI18N
+        pozadieNastavenia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/black2.jpg"))); // NOI18N
         NastaveniaPanel.add(pozadieNastavenia);
         pozadieNastavenia.setBounds(0, -40, 1030, 840);
 
@@ -279,7 +279,7 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.add(volnaKartaGUI1);
         volnaKartaGUI1.setBounds(720, 570, 100, 100);
 
-        pohybVpravo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/Arrows/right.png"))); // NOI18N
+        pohybVpravo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Arrows/right.png"))); // NOI18N
         pohybVpravo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pohybVpravo.setPreferredSize(new java.awt.Dimension(60, 60));
         pohybVpravo.addActionListener(new java.awt.event.ActionListener() {
@@ -292,7 +292,7 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.add(hracovaKartaGUI1);
         hracovaKartaGUI1.setBounds(910, 150, 80, 80);
 
-        zober.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/Arrows/ber.png"))); // NOI18N
+        zober.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Arrows/ber.png"))); // NOI18N
         zober.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         zober.setPreferredSize(new java.awt.Dimension(60, 60));
         zober.addActionListener(new java.awt.event.ActionListener() {
@@ -303,7 +303,7 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.add(zober);
         zober.setBounds(770, 320, 60, 60);
 
-        pohybVlavo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/Arrows/left.png"))); // NOI18N
+        pohybVlavo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Arrows/left.png"))); // NOI18N
         pohybVlavo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pohybVlavo.setPreferredSize(new java.awt.Dimension(60, 60));
         pohybVlavo.addActionListener(new java.awt.event.ActionListener() {
@@ -314,7 +314,7 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.add(pohybVlavo);
         pohybVlavo.setBounds(710, 320, 60, 60);
 
-        pohybHore.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/Arrows/up.png"))); // NOI18N
+        pohybHore.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Arrows/up.png"))); // NOI18N
         pohybHore.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pohybHore.setPreferredSize(new java.awt.Dimension(60, 60));
         pohybHore.addActionListener(new java.awt.event.ActionListener() {
@@ -331,7 +331,7 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.add(hraciaPlochaGUI1);
         hraciaPlochaGUI1.setBounds(40, 30, 610, 620);
 
-        otocVpravo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/Arrows/rotateR.png"))); // NOI18N
+        otocVpravo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Arrows/rotateR.png"))); // NOI18N
         otocVpravo.setPreferredSize(new java.awt.Dimension(60, 60));
         otocVpravo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -341,7 +341,7 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.add(otocVpravo);
         otocVpravo.setBounds(790, 690, 60, 60);
 
-        otocVlavo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/Arrows/rotateL.png"))); // NOI18N
+        otocVlavo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Arrows/rotateL.png"))); // NOI18N
         otocVlavo.setPreferredSize(new java.awt.Dimension(60, 60));
         otocVlavo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -505,7 +505,7 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.add(infoKarta);
         infoKarta.setBounds(690, 180, 200, 26);
 
-        pozadieHry.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/black3.jpg"))); // NOI18N
+        pozadieHry.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/black3.jpg"))); // NOI18N
         hraPanel.add(pozadieHry);
         pozadieHry.setBounds(0, 0, 1024, 768);
 
