@@ -19,8 +19,17 @@ public class SAVE
     public void ulozitHru(File subor) throws FileNotFoundException, UnsupportedEncodingException
     {
         try (PrintWriter writer = new PrintWriter(subor, "UTF-8")) {
-            writer.println("The first line");
-            writer.println("The second line");
+            writer.println(ALL.hracNaTahu);
+            writer.println(ALL.pocetUloh);
+            writer.println(ALL.hraciePole.riadky);
+            writer.println(ALL.poleHracov.pocetHracov);
+            for(int i = 1; i <= ALL.poleHracov.pocetHracov; i++)
+            {
+                writer.println(ALL.poleHracov.poleHracov[i].poziciaX);
+                writer.println(ALL.poleHracov.poleHracov[i].poziciaY);
+                writer.println(ALL.poleHracov.poleHracov[i].uloha);
+                writer.println(ALL.poleHracov.poleHracov[i].ziskaneBody);
+            }
         }
     }
 }

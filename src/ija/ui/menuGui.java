@@ -870,7 +870,16 @@ public class menuGui extends javax.swing.JFrame {
           File subor = fileChooser.getSelectedFile();
           System.out.print(subor);
           LOAD nacitanie = new LOAD();
-          nacitanie.nacitatHru(subor);
+            try {
+                nacitanie.nacitatHru(subor);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(menuGui.class.getName()).log(Level.SEVERE, null, ex);
+            }
+          hraciaPlochaGUI1.vytvorGui();
+          volnaKartaGUI1.vytvorVolnuGui();
+          pokladyGUI1.vytvorPokladyGui();
+          hraciGUI1.vytvorHraciGui();
+          volnyPokladGUI1.vytvorVolnuPGui();
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
