@@ -21,5 +21,5 @@ public class ALL
     public static int pocetUloh = 0;
     public static int undoX;
     public static int undoY;
-    public static int MaxVelkostBalicku;
+    public static int PocetHracovCelkovo;
 }

@@ -9,7 +9,7 @@ import java.util.Random; //kniznica kvoi metode shuffle
 public class CardPack
 {
 	public int maxSize; //maximum kariet pre dany balicek
-	int actSize; //aktualny poct kariet v balicku
+	public int actSize; //aktualny poct kariet v balicku
 	
 	public TreasureCard[] balicek; //pole kariet = balicek
 	

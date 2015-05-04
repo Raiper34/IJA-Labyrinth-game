@@ -47,16 +47,16 @@ public class LOAD
             //    Logger.getLogger(LOAD.class.getName()).log(Level.SEVERE, null, ex);
             //}
             
-            ALL.hracNaTahu=Integer.parseInt(br.readLine());
-            ALL.pocetUloh=Integer.parseInt(br.readLine());
-            int riadky=Integer.parseInt(br.readLine());
-            int pocethracov=Integer.parseInt(br.readLine());
-            ALL.MaxVelkostBalicku=Integer.parseInt(br.readLine());
-            
-            
+            ALL.hracNaTahu=Integer.parseInt(br.readLine()); //1
+            ALL.pocetUloh=Integer.parseInt(br.readLine()); //2
+            int riadky=Integer.parseInt(br.readLine()); //3 
+            int pocethracov=Integer.parseInt(br.readLine()); //4
+            int VelkostBalicka = Integer.parseInt(br.readLine()); //5
+            ALL.PocetHracovCelkovo = pocethracov;
             
             CardPack novybalicek = new CardPack(ALL.pocetUloh,ALL.pocetUloh);
             ALL.balicekKariet = novybalicek;
+            ALL.balicekKariet.actSize = VelkostBalicka;
             
             MazeBoard hraciaPlocha = MazeBoard.createMazeBoard(riadky);
             ALL.hraciePole = hraciaPlocha;
@@ -149,8 +149,10 @@ public class LOAD
                 }
             }
             
+            System.out.println("Pocet uloha: " + ALL.pocetUloh);
             for(int i = 0; i < ALL.pocetUloh; i++)
             {
+               System.out.println("Karta ok: " + i);
                ALL.balicekKariet.balicek[i].karta.code = Integer.parseInt(br.readLine());
             }
             

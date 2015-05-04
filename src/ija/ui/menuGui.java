@@ -562,8 +562,8 @@ public class menuGui extends javax.swing.JFrame {
         ParentPanel.add(hraPanel);
         ParentPanel.repaint();
         ParentPanel.revalidate();
-        ALL.MaxVelkostBalicku = pocetHracovSlider.getValue();
-        PocetHracoShow.setText("POCET HRACOV JE -> "+Integer.toString(ALL.MaxVelkostBalicku));
+        ALL.PocetHracovCelkovo = pocetHracovSlider.getValue();
+        PocetHracoShow.setText("POCET HRACOV JE -> "+Integer.toString(ALL.PocetHracovCelkovo));
         if(tlacitko12.isSelected())
         {
             CardPack novybalicek = new CardPack(12,12);
@@ -584,7 +584,7 @@ public class menuGui extends javax.swing.JFrame {
         MazeBoard hraciaPlocha = MazeBoard.createMazeBoard(velkostPolaSlider.getValue());
         ALL.hraciePole = hraciaPlocha;
         hraciaPlocha.newGame();
-        hraci zoznamHracov = hraci.vytvorHracov(ALL.MaxVelkostBalicku,velkostPolaSlider.getValue(),velkostPolaSlider.getValue());
+        hraci zoznamHracov = hraci.vytvorHracov(ALL.PocetHracovCelkovo,velkostPolaSlider.getValue(),velkostPolaSlider.getValue());
         ALL.poleHracov = zoznamHracov;
         hraciaPlochaGUI1.vytvorGui();
         volnaKartaGUI1.vytvorVolnuGui();
@@ -616,7 +616,7 @@ public class menuGui extends javax.swing.JFrame {
     private void dalsiHracActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dalsiHracActionPerformed
         ALL.hracNaTahu = ALL.hracNaTahu + 1;
         
-        if(ALL.MaxVelkostBalicku >= ALL.hracNaTahu)
+        if(ALL.PocetHracovCelkovo >= ALL.hracNaTahu)
         {
            tah.setText(Integer.toString(ALL.hracNaTahu));
            
@@ -787,7 +787,7 @@ public class menuGui extends javax.swing.JFrame {
             hracovaKartaGUI1.vytvorHracKartGui();
             UNDObutton.setVisible(false);
             
-            if(ALL.poleHracov.poleHracov[ALL.hracNaTahu].ziskaneBody == ALL.balicekKariet.maxSize/ALL.MaxVelkostBalicku)
+            if(ALL.poleHracov.poleHracov[ALL.hracNaTahu].ziskaneBody == ALL.balicekKariet.maxSize/ALL.PocetHracovCelkovo)
             {
                 ParentPanel.removeAll();
                 ParentPanel.add(VyhraPanel);
