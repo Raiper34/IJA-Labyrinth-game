@@ -9,6 +9,8 @@ import ija.homework1.treasure.Treasure;
 import ija.homework2.board.MazeCard;
 import ija.homework2.board.MazeCard.CANGO;
 import ija.homework2.board.MazeField;
+import java.io.File;
+import javax.swing.JFileChooser;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -128,6 +130,11 @@ public class menuGui extends javax.swing.JFrame {
         jButton2.setMaximumSize(new java.awt.Dimension(90, 25));
         jButton2.setMinimumSize(new java.awt.Dimension(90, 25));
         jButton2.setPreferredSize(new java.awt.Dimension(90, 25));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         MenuPanel.add(jButton2);
         jButton2.setBounds(370, 360, 260, 90);
 
@@ -411,6 +418,11 @@ public class menuGui extends javax.swing.JFrame {
 
         ulozitHru.setFont(new java.awt.Font("Century", 1, 12)); // NOI18N
         ulozitHru.setText("ULOZIT HRU");
+        ulozitHru.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ulozitHruMouseClicked(evt);
+            }
+        });
         hraPanel.add(ulozitHru);
         ulozitHru.setBounds(700, 50, 310, 30);
 
@@ -831,6 +843,23 @@ public class menuGui extends javax.swing.JFrame {
         vlozVolnuKartu.setVisible(true);
         UNDObutton.setVisible(false);
     }//GEN-LAST:event_UNDObuttonActionPerformed
+
+    private void ulozitHruMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ulozitHruMouseClicked
+        JFileChooser fileChooser = new JFileChooser();
+        if (fileChooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
+          File file = fileChooser.getSelectedFile();
+          System.out.print(file);
+          // save to file
+        }
+    }//GEN-LAST:event_ulozitHruMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+          File file = fileChooser.getSelectedFile();
+          System.out.print(file);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

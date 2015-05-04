@@ -31,7 +31,7 @@ public class hracovaKartaGUI extends JPanel
         if(ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha != -1)
         {
             try {
-                BufferedImage obrazok = ImageIO.read(getClass().getResource("/ija/ui/" + Integer.toString(ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha) + ".png"));
+                BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/poklady/" + Integer.toString(ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha) + ".png"));
                 Image dimg = obrazok.getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH);
                 add(new JLabel(new ImageIcon(dimg)));
             } catch (IOException ex) {
