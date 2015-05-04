@@ -68,6 +68,7 @@ public class menuGui extends javax.swing.JFrame {
         pozadieNastavenia = new javax.swing.JLabel();
         hraPanel = new javax.swing.JPanel();
         pohybDole = new javax.swing.JButton();
+        chybaButton = new javax.swing.JButton();
         volnyPokladGUI1 = new ija.ui.volnyPokladGUI();
         volnaKartaGUI1 = new ija.ui.volnaKartaGUI();
         pohybVpravo = new javax.swing.JButton();
@@ -264,7 +265,7 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.setPreferredSize(new java.awt.Dimension(1024, 768));
         hraPanel.setLayout(null);
 
-        pohybDole.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ija/ui/Arrows/down.png"))); // NOI18N
+        pohybDole.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Arrows/down.png"))); // NOI18N
         pohybDole.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pohybDole.setPreferredSize(new java.awt.Dimension(60, 60));
         pohybDole.addActionListener(new java.awt.event.ActionListener() {
@@ -274,6 +275,17 @@ public class menuGui extends javax.swing.JFrame {
         });
         hraPanel.add(pohybDole);
         pohybDole.setBounds(770, 380, 60, 60);
+
+        chybaButton.setBackground(new java.awt.Color(255, 153, 153));
+        chybaButton.setFont(new java.awt.Font("Century", 0, 11)); // NOI18N
+        chybaButton.setText("Chyba vo zvolenych suradniciach vkladania volneho kamena. Jedna zo suradnic musi nadobudat hodnotu 1 alebo MAX dlzka riadku/stlpca.");
+        chybaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chybaButtonActionPerformed(evt);
+            }
+        });
+        hraPanel.add(chybaButton);
+        chybaButton.setBounds(10, 220, 750, 80);
         hraPanel.add(volnyPokladGUI1);
         volnyPokladGUI1.setBounds(720, 570, 100, 100);
         hraPanel.add(volnaKartaGUI1);
@@ -544,6 +556,7 @@ public class menuGui extends javax.swing.JFrame {
         ParentPanel.add(NastaveniaPanel);
         ParentPanel.repaint();
         ParentPanel.revalidate();
+        chybaButton.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void NavratDoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NavratDoMenuActionPerformed
@@ -737,33 +750,43 @@ public class menuGui extends javax.swing.JFrame {
         int currentX = Integer.parseInt(riadokZadanie.getText());
         int currentY = Integer.parseInt(stlpecZadanie.getText());
         int max = ALL.hraciePole.riadky;
-        if((ALL.undoX == 1 && currentX == max && ALL.undoY == currentY ) || (ALL.undoX == max && currentX == 1 && ALL.undoY == currentY))
+        if ((currentX < max) || (currentY < max))
         {
-            System.out.println("chyba :D");
+            chybaButton.setVisible(true);
         }
-        else if ((ALL.undoY == 1 && currentY == max && ALL.undoX == currentX ) || (ALL.undoY == max && currentY == 1 && ALL.undoX == currentX))
+        else if(!((currentX == 1) || (currentX == max) || (currentY == 1) || (currentY == max)))
         {
-             System.out.println("chybaaaaaaaaaaaaaa");
+            chybaButton.setVisible(true);
         }
         else
         {
-            MazeField pomocny = ALL.hraciePole.get(currentX, Integer.parseInt(stlpecZadanie.getText()));
-            ALL.hraciePole.shift(pomocny);
-            hraciaPlochaGUI1.vytvorGui();
-            volnaKartaGUI1.vytvorVolnuGui();
-            pokladyGUI1.vytvorPokladyGui();
-            volnyPokladGUI1.vytvorVolnuPGui();
-            hraciGUI1.vytvorHraciGui();
-            vlozVolnuKartu.setVisible(false);
-            ALL.vlozKamenVisible = 0;
-            
+            if((ALL.undoX == 1 && currentX == max && ALL.undoY == currentY ) || (ALL.undoX == max && currentX == 1 && ALL.undoY == currentY))
+            {
+                System.out.println("chyba :D");
+            }
+            else if ((ALL.undoY == 1 && currentY == max && ALL.undoX == currentX ) || (ALL.undoY == max && currentY == 1 && ALL.undoX == currentX))
+            {
+                 System.out.println("chybaaaaaaaaaaaaaa");
+            }
+            else
+            {
+                MazeField pomocny = ALL.hraciePole.get(currentX, Integer.parseInt(stlpecZadanie.getText()));
+                ALL.hraciePole.shift(pomocny);
+                hraciaPlochaGUI1.vytvorGui();
+                volnaKartaGUI1.vytvorVolnuGui();
+                pokladyGUI1.vytvorPokladyGui();
+                volnyPokladGUI1.vytvorVolnuPGui();
+                hraciGUI1.vytvorHraciGui();
+                vlozVolnuKartu.setVisible(false);
+                ALL.vlozKamenVisible = 0;
 
-            ALL.undoX = Integer.parseInt(riadokZadanie.getText());
-            ALL.undoY = Integer.parseInt(stlpecZadanie.getText()); 
-            UNDObutton.setVisible(true);
-            ALL.undoVisible = 1;
+
+                ALL.undoX = Integer.parseInt(riadokZadanie.getText());
+                ALL.undoY = Integer.parseInt(stlpecZadanie.getText()); 
+                UNDObutton.setVisible(true);
+                ALL.undoVisible = 1;
+            }
         }
-        
         
     }//GEN-LAST:event_vlozVolnuKartuMouseClicked
 
@@ -918,8 +941,14 @@ public class menuGui extends javax.swing.JFrame {
               vlozVolnuKartu.setVisible(false);
           }
           
+          chybaButton.setVisible(false);
+          
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void chybaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chybaButtonActionPerformed
+        chybaButton.setVisible(false);
+    }//GEN-LAST:event_chybaButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -969,6 +998,7 @@ public class menuGui extends javax.swing.JFrame {
     private javax.swing.JPanel VyhraPanel;
     private javax.swing.JLabel balicekKarty;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton chybaButton;
     private javax.swing.JButton dalsiHrac;
     private javax.swing.JPanel hraPanel;
     private ija.ui.hraciGUI hraciGUI1;
