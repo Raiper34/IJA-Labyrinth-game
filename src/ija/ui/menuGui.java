@@ -1,6 +1,8 @@
 package ija.ui;
 
 import ija.elements.ALL;
+import ija.elements.LOAD;
+import ija.elements.SAVE;
 import ija.elements.hraci;
 import ija.homework2.board.MazeBoard;
 import ija.homework1.treasure.CardPack;
@@ -10,6 +12,10 @@ import ija.homework2.board.MazeCard;
 import ija.homework2.board.MazeCard.CANGO;
 import ija.homework2.board.MazeField;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 
 /*
@@ -847,17 +853,24 @@ public class menuGui extends javax.swing.JFrame {
     private void ulozitHruMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ulozitHruMouseClicked
         JFileChooser fileChooser = new JFileChooser();
         if (fileChooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
-          File file = fileChooser.getSelectedFile();
-          System.out.print(file);
-          // save to file
+          File subor = fileChooser.getSelectedFile();
+          System.out.print(subor);
+          SAVE ulozenie = new SAVE();
+            try {
+                ulozenie.ulozitHru(subor);
+            } catch (FileNotFoundException | UnsupportedEncodingException ex) {
+                Logger.getLogger(menuGui.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_ulozitHruMouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         JFileChooser fileChooser = new JFileChooser();
         if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
-          File file = fileChooser.getSelectedFile();
-          System.out.print(file);
+          File subor = fileChooser.getSelectedFile();
+          System.out.print(subor);
+          LOAD nacitanie = new LOAD();
+          nacitanie.nacitatHru(subor);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
