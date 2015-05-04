@@ -5,6 +5,7 @@
  */
 package ija.elements;
 
+import ija.homework2.board.MazeCard.CANGO;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -23,6 +24,42 @@ public class SAVE
             writer.println(ALL.pocetUloh);
             writer.println(ALL.hraciePole.riadky);
             writer.println(ALL.poleHracov.pocetHracov);
+            writer.println(ALL.balicekKariet.maxSize);
+            
+            if(ALL.hraciePole.volnaKarta.left == CANGO.NULL)
+            {
+                writer.println(0);
+            }
+            else
+            {
+                writer.println(1);
+            }
+            if(ALL.hraciePole.volnaKarta.up == CANGO.NULL)
+            {
+                writer.println(0);
+            }
+            else
+            {
+                writer.println(1);
+            }
+            if(ALL.hraciePole.volnaKarta.right == CANGO.NULL)
+            {
+                writer.println(0);
+            }
+            else
+            {
+                writer.println(1);
+            }
+            if(ALL.hraciePole.volnaKarta.down == CANGO.NULL)
+            {
+                writer.println(0);
+            }
+            else
+            {
+                writer.println(1);
+            }
+            writer.println(ALL.hraciePole.volnaKarta.uloha);
+            
             for(int i = 1; i <= ALL.poleHracov.pocetHracov; i++)
             {
                 writer.println(ALL.poleHracov.poleHracov[i].poziciaX);
