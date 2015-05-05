@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 package ija.ui;
+
 import ija.elements.ALL;
 import ija.homework2.board.MazeBoard;
+import ija.ui.nacitanieObrazky;
 
 import java.awt.GridLayout;
 import java.awt.Image;
@@ -81,15 +83,50 @@ public class hraciaPlochaGUI extends JPanel
                     menoL = 0;
                 }
                 String meno = Integer.toString(menoU) + Integer.toString(menoR) + Integer.toString(menoD) + Integer.toString(menoL);
-                System.out.println(meno);
-                this.polickaGui[i][j] = new JPanel();
-                try {
-                    BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/cesty/" + meno + ".png"));
-                    Image dimg = obrazok.getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
-                    this.polickaGui[i][j].add(new JLabel(new ImageIcon(dimg)));
-                } catch (IOException ex) {
-                    Logger.getLogger(hraciaPlochaGUI.class.getName()).log(Level.SEVERE, null, ex);
+                
+                if(meno.equals("0101"))
+                {
+                    meno = "0";
                 }
+                else if(meno.equals("1010"))
+                {
+                    meno = "1";
+                }
+                else if(meno.equals("0011"))
+                {
+                    meno = "2";
+                }
+                else if(meno.equals("0110"))
+                {
+                    meno = "3";
+                }
+                else if(meno.equals("1001"))
+                {
+                    meno = "4";
+                }
+                else if(meno.equals("1100"))
+                {
+                    meno = "5";
+                }
+                else if(meno.equals("0111"))
+                {
+                    meno = "6";
+                }
+                else if(meno.equals("1011"))
+                {
+                    meno = "7";
+                }
+                else if(meno.equals("1101"))
+                {
+                    meno = "8";
+                }
+                else
+                {
+                    meno = "9";
+                }
+                this.polickaGui[i][j] = new JPanel();
+                Image dimg = nacitanieObrazky.obrazkyPolicka[Integer.parseInt(meno)].getScaledInstance(this.getWidth()/this.hraciaPlocha.riadky - 2, this.getHeight()/this.hraciaPlocha.riadky, Image.SCALE_SMOOTH);
+                this.polickaGui[i][j].add(new JLabel(new ImageIcon(dimg)));
                 setOpaque(false);
                 this.polickaGui[i][j].setOpaque(false);
                 add(this.polickaGui[i][j]);

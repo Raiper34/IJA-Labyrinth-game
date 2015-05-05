@@ -4,6 +4,8 @@ import ija.elements.hraci;
 import ija.ui.tui;
 import ija.homework2.board.MazeBoard;
 import ija.ui.menuGui;
+import ija.ui.nacitanieObrazky;
+import java.io.IOException;
 import javax.swing.*;
 
 /**
@@ -12,8 +14,9 @@ import javax.swing.*;
  */
 public class ija 
 {	
-	public static void main(String[] args) 
+	public static void main(String[] args) throws IOException 
 	{       
+                nacitanieObrazky obrazky = new nacitanieObrazky();
                 menuGui menuOkno = new menuGui();
                 menuOkno.setVisible(true);
                 

@@ -31,13 +31,8 @@ public class volnyPokladGUI extends JPanel
         MazeCard volnaKarta = ALL.hraciePole.getFreeCard();
         if(ALL.hraciePole.volnaKarta.uloha != -1)
         {
-            try {
-                BufferedImage obrazok = ImageIO.read(getClass().getResource("/resources/poklady/" + Integer.toString(ALL.hraciePole.volnaKarta.uloha) + ".png"));
-                Image dimg = obrazok.getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH);
-                add(new JLabel(new ImageIcon(dimg)));
-            } catch (IOException ex) {
-                Logger.getLogger(hraciaPlochaGUI.class.getName()).log(Level.SEVERE, null, ex);
-            }   
+            Image dimg = nacitanieObrazky.obrazkyPoklady[ALL.hraciePole.volnaKarta.uloha].getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH);
+            add(new JLabel(new ImageIcon(dimg)));   
         }
         setOpaque(false);
     }
