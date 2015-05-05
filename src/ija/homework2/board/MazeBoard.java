@@ -1,13 +1,13 @@
 package ija.homework2.board;
 
-import ija.elements.ALL;
+import ija.elements.AllMainObjects;
 import ija.homework1.treasure.CardPack;
 import java.util.Random;
 
 /**
- * @author eduardRybar
- * @author raiper34
- *Trieda reprezentujuca hraciu desku
+ * Trieda, reprezentujuca hraciu desku, na ktoru sa davaju karty policka...
+ * @author Filip Gulan (xgulan00)
+ * @author Eduard Rybar (xrybar04)
  */
 public class MazeBoard 
 {
@@ -30,8 +30,8 @@ public class MazeBoard
 	}
 
 	/**
-	 * Vytvori hraciu pplochu a naplni plochu prazdnymi polickami
-	 * @param n - rozmer hracej dosky
+	 * Vytvori hraciu plochu a naplni plochu prazdnymi polickami
+	 * @param n rozmer hracej dosky
 	 * @return vytvorena hracia doska
 	 */
 	public static MazeBoard createMazeBoard(int n)
@@ -50,7 +50,7 @@ public class MazeBoard
 	}
 	
 	/**
-	 * Funkcia, ktora naplni vsetky policka kartami
+	 * Metoda, ktora naplni vsetky policka kartami
 	 */
 	public void newGame()
 	{
@@ -151,7 +151,7 @@ public class MazeBoard
 			}
 		}
                 //naplnenie ulohovymi kartami
-                CardPack balicekNaPolicka = new CardPack(ALL.pocetUloh,ALL.pocetUloh);
+                CardPack balicekNaPolicka = new CardPack(AllMainObjects.pocetUloh,AllMainObjects.pocetUloh);
                 balicekNaPolicka.shuffle();
                 while(balicekNaPolicka.size() != 0) 
                 {
@@ -160,8 +160,8 @@ public class MazeBoard
                     int umiestneny = 0;
                     while(umiestneny == 0)
                     {
-                       int nahodnyX = nahoda.nextInt(ALL.hraciePole.riadky) + 1;
-                       int nahodnyY = nahoda.nextInt(ALL.hraciePole.riadky) + 1;
+                       int nahodnyX = nahoda.nextInt(AllMainObjects.hraciePole.riadky) + 1;
+                       int nahodnyY = nahoda.nextInt(AllMainObjects.hraciePole.riadky) + 1;
                        if(this.plocha[nahodnyX][nahodnyY].karta.uloha == -1)
                        {
                            this.plocha[nahodnyX][nahodnyY].karta.uloha = hodnota;
@@ -169,14 +169,6 @@ public class MazeBoard
                        }
                     }
                 }
-                /*for(int i = 1; i <= this.riadky; i++) //idem po riadkoch
-		{
-			for(int j = 1; j <= this.stlpce; j++) //idem po stlpcoch
-			{
-                            this.plocha[i][j].karta.uloha = 1;
-                            
-                        }
-                }*/
 		this.volnaKarta = MazeCard.create(random()); //vytvorim volnu kartu
 	}
         
@@ -255,21 +247,21 @@ public class MazeBoard
 				this.plocha[this.riadky - i][mf.col].karta = this.plocha[this.riadky - i - 1][mf.col].karta;
 			}
 			this.plocha[1][mf.col].karta = pomocna; //nakoniec vlozim vou kartu
-                        if(mf.col == ALL.poleHracov.poleHracov[1].poziciaX)
+                        if(mf.col == AllMainObjects.poleHracov.poleHracov[1].poziciaX)
                         {
-                            ALL.poleHracov.poleHracov[1].zmenY(1);
+                            AllMainObjects.poleHracov.poleHracov[1].zmenY(1);
                         }
-                        if(mf.col == ALL.poleHracov.poleHracov[2].poziciaX)
+                        if(mf.col == AllMainObjects.poleHracov.poleHracov[2].poziciaX)
                         {
-                            ALL.poleHracov.poleHracov[2].zmenY(1);
+                            AllMainObjects.poleHracov.poleHracov[2].zmenY(1);
                         }
-                        if(mf.col == ALL.poleHracov.poleHracov[3].poziciaX)
+                        if(mf.col == AllMainObjects.poleHracov.poleHracov[3].poziciaX)
                         {
-                            ALL.poleHracov.poleHracov[3].zmenY(1);
+                            AllMainObjects.poleHracov.poleHracov[3].zmenY(1);
                         }
-                        if(mf.col == ALL.poleHracov.poleHracov[4].poziciaX)
+                        if(mf.col == AllMainObjects.poleHracov.poleHracov[4].poziciaX)
                         {
-                            ALL.poleHracov.poleHracov[4].zmenY(1);
+                            AllMainObjects.poleHracov.poleHracov[4].zmenY(1);
                         }
 		} //analogie v podstate ine smery iba
 		else if((mf.row == this.riadky) & ((mf.col % 2) == 0)) //karty sa posunu hore v stlpci
@@ -281,21 +273,21 @@ public class MazeBoard
 				this.plocha[i][mf.col].karta = this.plocha[i + 1][mf.col].karta;
 			}
 			this.plocha[this.riadky][mf.col].karta = pomocna;
-                        if(mf.col == ALL.poleHracov.poleHracov[1].poziciaX)
+                        if(mf.col == AllMainObjects.poleHracov.poleHracov[1].poziciaX)
                         {
-                            ALL.poleHracov.poleHracov[1].zmenY(-1);
+                            AllMainObjects.poleHracov.poleHracov[1].zmenY(-1);
                         }
-                        if(mf.col == ALL.poleHracov.poleHracov[2].poziciaX)
+                        if(mf.col == AllMainObjects.poleHracov.poleHracov[2].poziciaX)
                         {
-                            ALL.poleHracov.poleHracov[2].zmenY(-1);
+                            AllMainObjects.poleHracov.poleHracov[2].zmenY(-1);
                         }
-                        if(mf.col == ALL.poleHracov.poleHracov[3].poziciaX)
+                        if(mf.col == AllMainObjects.poleHracov.poleHracov[3].poziciaX)
                         {
-                            ALL.poleHracov.poleHracov[3].zmenY(-1);
+                            AllMainObjects.poleHracov.poleHracov[3].zmenY(-1);
                         }
-                        if(mf.col == ALL.poleHracov.poleHracov[4].poziciaX)
+                        if(mf.col == AllMainObjects.poleHracov.poleHracov[4].poziciaX)
                         {
-                            ALL.poleHracov.poleHracov[4].zmenY(-1);
+                            AllMainObjects.poleHracov.poleHracov[4].zmenY(-1);
                         }
 		}
 		else if((mf.col == 1) & ((mf.row % 2) == 0)) //karty sa posunu doprava na riadku
@@ -307,21 +299,21 @@ public class MazeBoard
 				this.plocha[mf.row][this.stlpce - i].karta = this.plocha[mf.row][this.stlpce - i - 1].karta;
 			}
 			this.plocha[mf.row][1].karta = pomocna;
-                        if(mf.row == ALL.poleHracov.poleHracov[1].poziciaY)
+                        if(mf.row == AllMainObjects.poleHracov.poleHracov[1].poziciaY)
                         {
-                            ALL.poleHracov.poleHracov[1].zmenX(1);
+                            AllMainObjects.poleHracov.poleHracov[1].zmenX(1);
                         }
-                        if(mf.row == ALL.poleHracov.poleHracov[2].poziciaY)
+                        if(mf.row == AllMainObjects.poleHracov.poleHracov[2].poziciaY)
                         {
-                            ALL.poleHracov.poleHracov[2].zmenX(1);
+                            AllMainObjects.poleHracov.poleHracov[2].zmenX(1);
                         }
-                        if(mf.row == ALL.poleHracov.poleHracov[3].poziciaY)
+                        if(mf.row == AllMainObjects.poleHracov.poleHracov[3].poziciaY)
                         {
-                            ALL.poleHracov.poleHracov[3].zmenX(1);
+                            AllMainObjects.poleHracov.poleHracov[3].zmenX(1);
                         }
-                        if(mf.row == ALL.poleHracov.poleHracov[4].poziciaY)
+                        if(mf.row == AllMainObjects.poleHracov.poleHracov[4].poziciaY)
                         {
-                            ALL.poleHracov.poleHracov[4].zmenX(1);
+                            AllMainObjects.poleHracov.poleHracov[4].zmenX(1);
                         }
                         
 		}
@@ -334,21 +326,21 @@ public class MazeBoard
 				this.plocha[mf.row][i].karta = this.plocha[mf.row][i + 1].karta;
 			}
 			this.plocha[mf.row][this.stlpce].karta = pomocna;
-                        if(mf.row == ALL.poleHracov.poleHracov[1].poziciaY)
+                        if(mf.row == AllMainObjects.poleHracov.poleHracov[1].poziciaY)
                         {
-                            ALL.poleHracov.poleHracov[1].zmenX(-1);
+                            AllMainObjects.poleHracov.poleHracov[1].zmenX(-1);
                         }
-                        if(mf.row == ALL.poleHracov.poleHracov[2].poziciaY)
+                        if(mf.row == AllMainObjects.poleHracov.poleHracov[2].poziciaY)
                         {
-                            ALL.poleHracov.poleHracov[2].zmenX(-1);
+                            AllMainObjects.poleHracov.poleHracov[2].zmenX(-1);
                         }
-                        if(mf.row == ALL.poleHracov.poleHracov[3].poziciaY)
+                        if(mf.row == AllMainObjects.poleHracov.poleHracov[3].poziciaY)
                         {
-                            ALL.poleHracov.poleHracov[3].zmenX(-1);
+                            AllMainObjects.poleHracov.poleHracov[3].zmenX(-1);
                         }
-                        if(mf.row == ALL.poleHracov.poleHracov[4].poziciaY)
+                        if(mf.row == AllMainObjects.poleHracov.poleHracov[4].poziciaY)
                         {
-                            ALL.poleHracov.poleHracov[4].zmenX(-1);
+                            AllMainObjects.poleHracov.poleHracov[4].zmenX(-1);
                         }
 		}
 	}

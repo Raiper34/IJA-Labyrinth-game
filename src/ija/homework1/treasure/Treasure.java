@@ -1,8 +1,9 @@
 package ija.homework1.treasure;
 
 /**
- * @author Filip Gulan xgulan00
- * Trieda reprezentujuca poklad
+ * Trieda, reprezentujuca poklad, hodnotu aku ma 
+ * @author Filip Gulan (xgulan00)
+ * @author Eduard Rybar (xrybar04)
  */
 public class Treasure 
 {
@@ -47,6 +48,10 @@ public class Treasure
 		return null; //nenasiel sa
 	}
         
+        /**
+         * Metoda na ziskanie hodnoty pokladu
+         * @return hodnotu
+         */
         public int getCode()
         {
             return this.code;

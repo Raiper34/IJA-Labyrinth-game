@@ -1,11 +1,9 @@
 package ija.homework2.board;
 
-import java.lang.IllegalArgumentException;
-
 /**
- * @author eduardRybar
- * @author raiper34
- *Trieda reprezentujuca jednu kartu, ktory sa vklada na policka
+ * Trieda, reprezentujuca cestu, ktora je na danej suradnici
+ * @author Filip Gulan (xgulan00)
+ * @author Eduard Rybar (xrybar04)
  */
 public class MazeCard 
 {
@@ -17,12 +15,11 @@ public class MazeCard
         public int uloha;
 	
 	/**
-	 * 
+	 * Konstruktor, ktory naplni svoje smeri bud null ak sa tede neda ist inak hodnotou enumeracie
 	 * @param left
 	 * @param up
 	 * @param right
 	 * @param down
-	 * Konstruktor, ktory naplni svoje smeri bud null ak sa tede neda ist inak hodnotou enumeracie
 	 */
 	public MazeCard(CANGO left, CANGO up, CANGO right, CANGO down) 
 	{
@@ -34,7 +31,6 @@ public class MazeCard
 	}
 
 	/**
-	 * @author raiper34
 	 * Enumeracia, reprezentuje smer kade opustit kartu
 	 */
 	public static enum CANGO
@@ -47,8 +43,8 @@ public class MazeCard
 	}
 
 	/**
-	 * Funkcia na vytvorenie karty
-	 * @param type - ktory urcuje typ vytvaranej karty
+	 * Metoda na vytvorenie karty
+	 * @param type ktory urcuje typ vytvaranej karty
 	 * @return vytvorenu kartu
 	 */
 	public static MazeCard create(String type)
@@ -76,7 +72,7 @@ public class MazeCard
 	}
 	
 	/**
-	 * Funkcia na zistenie ci sa da opustit kartu danm smerom
+	 * Metoda na zistenie ci sa da opustit kartu danm smerom
 	 * @param dir smer ktory testujeme ci nym mozme ist
 	 * @return false ak sa nea opustit, inak vracia true ak mozme opustit
 	 */
@@ -134,7 +130,7 @@ public class MazeCard
 	}
 	
 	/**
-	 * Funkcia na otocenie karty o 90 stupnov doprava
+	 * Metoda na otocenie karty o 90 stupnov doprava
 	 */
 	public void turnRight()
 	{
@@ -146,6 +142,9 @@ public class MazeCard
 		this.up = pomocna;
 	}
         
+        /**
+	 * Metoda na otocenie karty o 90 stupnov dolava
+	 */
         public void turnLeft()
 	{
 		CANGO pomocna;

@@ -3,8 +3,9 @@ package ija.homework1.treasure;
 import java.util.Random; //kniznica kvoi metode shuffle
 
 /**
- * @author Filip Gulan xgulan00
- *
+ * Trieda, reprezentujuca balicek kariet
+ * @author Filip Gulan (xgulan00)
+ * @author Eduard Rybar (xrybar04)
  */
 public class CardPack
 {
@@ -54,7 +55,7 @@ public class CardPack
 	}
 	
 	/**
-	 * 
+	 * Metoda, ktora zamiesa balicek kariet
 	 */
 	public void shuffle()
 	{

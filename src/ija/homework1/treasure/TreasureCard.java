@@ -1,8 +1,9 @@
 package ija.homework1.treasure;
 
 /**
- * @author Filip Gulan xgulan00
- *
+ * Trieda, reprezentujuca poklad/to co karta obsahuje na sebe
+ * @author Filip Gulan (xgulan00)
+ * @author Eduard Rybar (xrybar04)
  */
 public class TreasureCard
 {
@@ -17,6 +18,10 @@ public class TreasureCard
 		this.karta = tr;
 	}
         
+        /**
+         * Metoda, ktora vrati karu
+         * @return karta
+         */
         public Treasure getCard()
         {
             return this.karta;

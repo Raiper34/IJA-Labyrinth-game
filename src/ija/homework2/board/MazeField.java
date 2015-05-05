@@ -1,9 +1,9 @@
 package ija.homework2.board;
 
 /**
- * @author eduardRybar
- * @author raiper34
- *Trieda reprezentujuca jedno policko hracej plochy
+ * Trieda, eprezentujuca jedno policko hracej plochy
+ * @author Filip Gulan (xgulan00)
+ * @author Eduard Rybar (xrybar04)
  */
 public class MazeField 
 {
@@ -53,7 +53,7 @@ public class MazeField
 	
 	/**
 	 * Vlozi kartu na dane policko
-	 * @param c - umiestnovana karta
+	 * @param c umiestnovana karta
 	 */
 	public void putCard(MazeCard c)
 	{
