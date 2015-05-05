@@ -499,9 +499,9 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.add(skore);
         skore.setBounds(380, 690, 40, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/black.JPG"))); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         hraPanel.add(jLabel1);
-        jLabel1.setBounds(50, 40, 600, 600);
+        jLabel1.setBounds(50, 40, 0, 0);
 
         infoScore.setFont(new java.awt.Font("Cooper Black", 1, 18)); // NOI18N
         infoScore.setForeground(new java.awt.Color(240, 240, 240));
