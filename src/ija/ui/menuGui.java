@@ -750,7 +750,7 @@ public class menuGui extends javax.swing.JFrame {
         int currentX = Integer.parseInt(riadokZadanie.getText());
         int currentY = Integer.parseInt(stlpecZadanie.getText());
         int max = ALL.hraciePole.riadky;
-        if ((currentX < max) || (currentY < max))
+        if ((currentX > max) || (currentY > max))
         {
             chybaButton.setVisible(true);
         }
@@ -763,10 +763,12 @@ public class menuGui extends javax.swing.JFrame {
             if((ALL.undoX == 1 && currentX == max && ALL.undoY == currentY ) || (ALL.undoX == max && currentX == 1 && ALL.undoY == currentY))
             {
                 System.out.println("chyba :D");
+                chybaButton.setVisible(true);
             }
             else if ((ALL.undoY == 1 && currentY == max && ALL.undoX == currentX ) || (ALL.undoY == max && currentY == 1 && ALL.undoX == currentX))
             {
                  System.out.println("chybaaaaaaaaaaaaaa");
+                 chybaButton.setVisible(true);
             }
             else
             {
