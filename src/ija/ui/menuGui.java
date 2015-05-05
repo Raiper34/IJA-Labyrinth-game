@@ -390,9 +390,17 @@ public class menuGui extends javax.swing.JFrame {
         stlpecText.setText("stlpec");
         hraPanel.add(stlpecText);
         stlpecText.setBounds(870, 500, 80, 22);
+
+        stlpecZadanie.setText("2");
+        stlpecZadanie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stlpecZadanieActionPerformed(evt);
+            }
+        });
         hraPanel.add(stlpecZadanie);
         stlpecZadanie.setBounds(940, 490, 59, 30);
 
+        riadokZadanie.setText("1");
         riadokZadanie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 riadokZadanieActionPerformed(evt);
@@ -616,8 +624,9 @@ public class menuGui extends javax.swing.JFrame {
         ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha = -1;
         hracovaKartaGUI1.vytvorHracKartGui();
         vlozVolnuKartu.setVisible(true);
-        
-        
+        skore.setText(Integer.toString(ALL.poleHracov.poleHracov[ALL.hracNaTahu].ziskaneBody));
+        ALL.hracNaTahu = 1;
+        tah.setText(Integer.toString(ALL.hracNaTahu));
     }//GEN-LAST:event_StartActionPerformed
 
     private void pocetHracovSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_pocetHracovSliderStateChanged
@@ -770,13 +779,19 @@ public class menuGui extends javax.swing.JFrame {
         {
             if((ALL.undoX == 1 && currentX == max && ALL.undoY == currentY ) || (ALL.undoX == max && currentX == 1 && ALL.undoY == currentY))
             {
-                System.out.println("chyba :D");
                 chybaButton.setVisible(true);
             }
             else if ((ALL.undoY == 1 && currentY == max && ALL.undoX == currentX ) || (ALL.undoY == max && currentY == 1 && ALL.undoX == currentX))
             {
-                 System.out.println("chybaaaaaaaaaaaaaa");
                  chybaButton.setVisible(true);
+            }
+            else if((currentX % 2) != 0 && (currentX != max && currentX != 1))
+            {
+                chybaButton.setVisible(true);
+            }
+            else if((currentY % 2) != 0 && (currentY != max && currentY != 1))
+            {
+                chybaButton.setVisible(true);
             }
             else
             {
@@ -789,8 +804,6 @@ public class menuGui extends javax.swing.JFrame {
                 hraciGUI1.vytvorHraciGui();
                 vlozVolnuKartu.setVisible(false);
                 ALL.vlozKamenVisible = 0;
-
-
                 ALL.undoX = Integer.parseInt(riadokZadanie.getText());
                 ALL.undoY = Integer.parseInt(stlpecZadanie.getText()); 
                 UNDObutton.setVisible(true);
@@ -955,11 +968,16 @@ public class menuGui extends javax.swing.JFrame {
           
         }
         hracovaKartaGUI1.vytvorHracKartGui();
+        skore.setText(Integer.toString(ALL.poleHracov.poleHracov[ALL.hracNaTahu].ziskaneBody));
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void chybaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chybaButtonActionPerformed
         chybaButton.setVisible(false);
     }//GEN-LAST:event_chybaButtonActionPerformed
+
+    private void stlpecZadanieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stlpecZadanieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_stlpecZadanieActionPerformed
 
     /**
      * @param args the command line arguments
