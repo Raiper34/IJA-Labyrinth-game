@@ -69,6 +69,7 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel = new javax.swing.JPanel();
         pohybDole = new javax.swing.JButton();
         chybaButton = new javax.swing.JButton();
+        potiahnutKartu = new javax.swing.JButton();
         volnyPokladGUI1 = new ija.ui.volnyPokladGUI();
         volnaKartaGUI1 = new ija.ui.volnaKartaGUI();
         pohybVpravo = new javax.swing.JButton();
@@ -91,7 +92,6 @@ public class menuGui extends javax.swing.JFrame {
         balicekKarty = new javax.swing.JLabel();
         UkoncitHru = new javax.swing.JButton();
         ulozitHru = new javax.swing.JButton();
-        potiahnutKartu = new javax.swing.JButton();
         dalsiHrac = new javax.swing.JButton();
         infoKarty = new javax.swing.JLabel();
         tah = new javax.swing.JLabel();
@@ -286,6 +286,16 @@ public class menuGui extends javax.swing.JFrame {
         });
         hraPanel.add(chybaButton);
         chybaButton.setBounds(10, 220, 750, 80);
+
+        potiahnutKartu.setText("POTIAHNUT KARTU");
+        potiahnutKartu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 4, true));
+        potiahnutKartu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                potiahnutKartuActionPerformed(evt);
+            }
+        });
+        hraPanel.add(potiahnutKartu);
+        potiahnutKartu.setBounds(880, 240, 140, 40);
         hraPanel.add(volnyPokladGUI1);
         volnyPokladGUI1.setBounds(720, 570, 100, 100);
         hraPanel.add(volnaKartaGUI1);
@@ -302,7 +312,7 @@ public class menuGui extends javax.swing.JFrame {
         hraPanel.add(pohybVpravo);
         pohybVpravo.setBounds(830, 320, 60, 60);
         hraPanel.add(hracovaKartaGUI1);
-        hracovaKartaGUI1.setBounds(910, 150, 80, 80);
+        hracovaKartaGUI1.setBounds(910, 150, 130, 130);
 
         zober.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Arrows/ber.png"))); // NOI18N
         zober.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -416,7 +426,7 @@ public class menuGui extends javax.swing.JFrame {
         kartaHraca.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         kartaHraca.setForeground(new java.awt.Color(240, 240, 240));
         hraPanel.add(kartaHraca);
-        kartaHraca.setBounds(1010, 280, 80, 50);
+        kartaHraca.setBounds(1040, 280, 50, 50);
 
         balicekKarty.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         balicekKarty.setForeground(new java.awt.Color(240, 240, 240));
@@ -443,16 +453,6 @@ public class menuGui extends javax.swing.JFrame {
         });
         hraPanel.add(ulozitHru);
         ulozitHru.setBounds(700, 50, 310, 30);
-
-        potiahnutKartu.setText("POTIAHNUT KARTU");
-        potiahnutKartu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 4, true));
-        potiahnutKartu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                potiahnutKartuActionPerformed(evt);
-            }
-        });
-        hraPanel.add(potiahnutKartu);
-        potiahnutKartu.setBounds(880, 240, 140, 40);
 
         dalsiHrac.setText("DALSI HRAC");
         dalsiHrac.addActionListener(new java.awt.event.ActionListener() {
@@ -519,7 +519,7 @@ public class menuGui extends javax.swing.JFrame {
 
         pozadieHry.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/black3.jpg"))); // NOI18N
         hraPanel.add(pozadieHry);
-        pozadieHry.setBounds(0, 0, 1024, 768);
+        pozadieHry.setBounds(0, -40, 1100, 810);
 
         ParentPanel.add(hraPanel, "card4");
 
@@ -607,6 +607,7 @@ public class menuGui extends javax.swing.JFrame {
         UNDObutton.setVisible(false);
         ALL.undoVisible = 0;
         ALL.poleHracov.poleHracov[ALL.hracNaTahu].uloha = -1;
+        hracovaKartaGUI1.vytvorHracKartGui();
         
         
         
@@ -946,6 +947,7 @@ public class menuGui extends javax.swing.JFrame {
           chybaButton.setVisible(false);
           
         }
+        hracovaKartaGUI1.vytvorHracKartGui();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void chybaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chybaButtonActionPerformed

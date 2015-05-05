@@ -21,12 +21,12 @@ public class nacitanieObrazky {
     public nacitanieObrazky() throws IOException
     {
         nacitanieObrazky.obrazkyPolicka = new BufferedImage[10];
-        nacitanieObrazky.obrazkyPoklady = new BufferedImage[12];
+        nacitanieObrazky.obrazkyPoklady = new BufferedImage[24];
         for(int i = 0; i < 10; i++ )
         {
             nacitanieObrazky.obrazkyPolicka[i] = ImageIO.read(getClass().getResource("/resources/cesty/" + i + ".png"));
         }
-        for(int i = 0; i < 12; i++ )
+        for(int i = 0; i < 24; i++ )
         {
             nacitanieObrazky.obrazkyPoklady[i] = ImageIO.read(getClass().getResource("/resources/poklady/" + i + ".png"));
         }
