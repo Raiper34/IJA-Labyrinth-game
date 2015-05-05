@@ -16,11 +16,14 @@
         <javac srcdir="src" destdir="build"/>
         <jar destfile="dest-client/ija2015-client.jar" basedir="build">
             <manifest>
-                <attribute name="Main-Class" value="ija.ija"/>
+                <attribute name="Main-Class" value="ija.Game"/>
             </manifest>
+            <fileset dir="lib">
+                <include name="resources/**" />
+           </fileset>
         </jar>
-        <javadoc packagenames="src" sourcepath="src" destdir="doc">
-       		<fileset dir="src">
+        <javadoc packagenames="ija" sourcepath="src/ija" destdir="doc">
+       		<fileset dir="src/ija">
                 <include name="**" />
            </fileset>
     	</javadoc>
