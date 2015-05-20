@@ -16,8 +16,8 @@ public class Save
     /**
      * Metoda na ulozenie informaci do suboru daneho argumentom
      * @param subor do ktoreho ukladame informacie
-     * @throws FileNotFoundException vynimka ak sa nenajde subor
-     * @throws UnsupportedEncodingException vynimka nepodporovaneho kodovania 
+     * @throws FileNotFoundException
+     * @throws UnsupportedEncodingException 
      */
     public void ulozitHru(File subor) throws FileNotFoundException, UnsupportedEncodingException
     {

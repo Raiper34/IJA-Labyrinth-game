@@ -13,8 +13,8 @@ public class MazeField
 	
 	/**
 	 * Konstuktor, ktory vytvori prazdne policko na suradnici row col
-	 * @param row
-	 * @param col
+	 * @param row rozmer bludiska
+	 * @param col rozmer bludiska
 	 */
 	public MazeField(int row, int col) 
 	{

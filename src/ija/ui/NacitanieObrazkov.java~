@@ -16,7 +16,7 @@ public class NacitanieObrazkov {
     
     /**
      * Metoda, ktora nacita obrazky a uklada ich do pola pre rychlejsiu pracu s GUI
-     * @throws IOException vynimka ak sa nenajdu obrazky
+     * @throws IOException 
      */
     public NacitanieObrazkov() throws IOException
     {

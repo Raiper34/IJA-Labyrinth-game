@@ -30,7 +30,7 @@ public class PlayerTeam {
      * @param pocetHracov ktorych metoda vytvara
      * @param pocetRiadkov rozmer hracej plochy
      * @param pocetStlpcov rozmer hracej plochy
-     * @return pole vsetkych hracov
+     * @return 
      */
     public static PlayerTeam vytvorHracov(int pocetHracov, int pocetRiadkov, int pocetStlpcov)
     {

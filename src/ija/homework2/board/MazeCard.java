@@ -16,10 +16,10 @@ public class MazeCard
 	
 	/**
 	 * Konstruktor, ktory naplni svoje smeri bud null ak sa tede neda ist inak hodnotou enumeracie
-	 * @param left
-	 * @param up
-	 * @param right
-	 * @param down
+	 * @param left ci je zadany cesta dolava
+	 * @param up cesta hore
+	 * @param right cesta pravo
+	 * @param down cesta dole
 	 */
 	public MazeCard(CANGO left, CANGO up, CANGO right, CANGO down) 
 	{

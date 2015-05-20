@@ -15,7 +15,7 @@ public class Game
         /**
          * Metoda main, ktora vsetko spusta
          * @param args argumenty prikazovej riadky
-         * @throws IOException vynimka v pripad chyby vstup/vystup operacii
+         * @throws IOException 
          */
 	public static void main(String[] args) throws IOException 
 	{       

@@ -20,7 +20,7 @@ public class Tui
 	
 	/**
          * Konstruktor triedy
-	 * @param hraciaPlocha hracia plocha ktoru budeme vykreslovat
+	 * @param hraciaPlocha
 	 */
 	public Tui(MazeBoard hraciaPlocha)
 	{

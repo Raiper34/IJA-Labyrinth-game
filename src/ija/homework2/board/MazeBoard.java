@@ -18,8 +18,8 @@ public class MazeBoard
 	
 	/**
 	 * Konstruktor, triedy iba poviem ako velka bude plocha 
-	 * @param riadky
-	 * @param stlpce
+	 * @param riadky rozmer bludiska
+	 * @param stlpce rozmer bludiska
 	 */
 	public MazeBoard(int riadky, int stlpce) 
 	{
@@ -184,7 +184,7 @@ public class MazeBoard
 	
 	/**
 	 * Funkcia na nahodne generovanie typu karty
-	 * @return
+	 * @return nahodne vygenerovany String
 	 */
 	public String random()
 	{
